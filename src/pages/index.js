@@ -1,5 +1,9 @@
 import React from "react"
+import styled from "styled-components"
+import MainView from "../views/mainPage/MainView"
 
-export default function Home() {
-  return <div>Hello world!</div>
+const MainPage = () => {
+  return <MainView />
 }
+
+export default MainPage
