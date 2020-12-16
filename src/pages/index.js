@@ -1,9 +1,9 @@
 import React from "react"
 import styled from "styled-components"
-import MainView from "../views/mainPage/MainView"
+import Home from "../views/home/MainView"
 
 const MainPage = () => {
-  return <MainView />
+  return <Home />
 }
 
 export default MainPage
