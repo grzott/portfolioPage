@@ -10,7 +10,17 @@ module.exports = {
     {
       resolve: `gatsby-plugin-layout`,
       options: {
-        component: require.resolve(`./src/components/_shared/layout/Layout.js`),
+        component: require.resolve(`./src/components/_shared/layout/Layout.jsx`),
+      },
+    },
+    {
+      resolve: `gatsby-plugin-google-fonts`,
+      options: {
+        fonts: [
+          `roboto\:400,700`,
+          `poppins\:400,700`,
+        ],
+        display: 'swap',
       },
     },
   ],

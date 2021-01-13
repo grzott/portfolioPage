@@ -10,6 +10,7 @@ const Layout = ({ children }) => {
           paddingTop: "50px",
         }}
       >
+
         {children}
       </div>
       {/* <Footer /> */}
