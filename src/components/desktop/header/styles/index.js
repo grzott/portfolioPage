@@ -1,6 +1,6 @@
 import styled from "styled-components"
 
-export const Title = styled.h1`
+export const Wrapper = styled.header`
   font-size: 30px;
   color: ${({ theme }) => theme.color.primary};
 `

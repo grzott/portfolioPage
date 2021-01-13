@@ -23,7 +23,6 @@ export const GlobalStyle = createGlobalStyle`
     scroll-behavior: smooth;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 16px;
-    color: '#1a202c';
   }
   body {
     line-height: 1.5;

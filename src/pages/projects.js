@@ -1,7 +1,7 @@
 import React from "react"
 
 const ProjectsPage = () => {
-  return <div>About Me</div>
+  return <div>Projects</div>
 }
 
 export default ProjectsPage

@@ -1,7 +1,7 @@
 import React from "react"
 
 const SkillsPage = () => {
-  return <div>About Me</div>
+  return <div>Skills</div>
 }
 
 export default SkillsPage
