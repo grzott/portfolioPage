@@ -3,7 +3,7 @@ import { isMobile, isBrowser } from "react-device-detect"
 import "./reset.css"
 import { ThemeProvider } from "styled-components"
 import theme from "./theme"
-import MobileLayout from "../../desktop/layout/Layout"
+import DesktopLayout from "../../desktop/layout/Layout"
 import MobileLayout from "../../mobile/layout/Layout"
 
 const Layout = ({ children, path }) => {
@@ -19,7 +19,6 @@ const Layout = ({ children, path }) => {
     </ThemeProvider>
   )
 }
-return <></>
 
 
 export default Layout
