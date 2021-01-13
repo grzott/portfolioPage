@@ -1,25 +1,25 @@
-import React, { useState, useEffect } from "react"
+import React from "react"
 import { isMobile, isBrowser } from "react-device-detect"
-
+import "./reset.css"
+import { ThemeProvider } from "styled-components"
+import theme from "./theme"
+import MobileLayout from "../../desktop/layout/Layout"
+import MobileLayout from "../../mobile/layout/Layout"
 
 const Layout = ({ children, path }) => {
-
-  //CHANGE TO !==
   if (isMobile)
     return (
       <ThemeProvider theme={theme}>
-        <MobileLayout path={path}>{children}</MobileLayout>
+        <MobileLayout>{children}</MobileLayout>
       </ThemeProvider>
     )
-  if (isBrowser) {
-    return (
-      <ThemeProvider theme={theme}>
-        <DesktopLayout>{children}</DesktopLayout>
-      </ThemeProvider>
-    )
-  }
+  return (
+    <ThemeProvider theme={theme}>
+      <DesktopLayout>{children}</DesktopLayout>
+    </ThemeProvider>
+  )
+}
+return <></>
 
 
-  return <></>
-
-  export default Layout
+export default Layout
