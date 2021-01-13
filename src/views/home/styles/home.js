@@ -2,7 +2,7 @@ import styled from "styled-components"
 
 export const Title = styled.h1`
   font-size: 30px;
-  color: 'black';
+  color: ${({ theme }) => theme.color.primary};
 `
 
-// ${({ theme }) => theme.color.secondary}
+// color: ${({ theme }) => theme.color.primary};
