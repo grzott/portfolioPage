@@ -5,11 +5,11 @@ import { isMobile } from "react-device-detect"
 import { GlobalStyle } from '../../../theme/global-styles'
 import { withTheme } from 'styled-components'
 
-const Layout = withTheme(({ children, theme }) => {
+const Layout = withTheme(({ children }) => {
   if (isMobile)
     return (
       <>
-        <GlobalStyle theme={theme} />
+        <GlobalStyle />
         <MobileLayout>{children}</MobileLayout>
       </>
     )

@@ -1,8 +1,15 @@
 import React from "react"
-import { Title } from "./styles/home"
+import HomePageTitle from '../../components/_shared/homePageTitle/HomePageTitle'
+import { withTheme } from "styled-components"
+import HomePageText from "../../components/_shared/homePageText/HomePageText"
 
-const DesktopHome = () => {
-  return <Title>Hello Portfolio on Desktop!</Title>
+const DesktopHome = ({ theme }) => {
+  return (
+    <>
+      <HomePageTitle />
+      <HomePageText />
+    </>
+  )
 }
 
-export default DesktopHome
+export default withTheme(DesktopHome)

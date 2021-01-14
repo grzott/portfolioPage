@@ -1,10 +1,11 @@
 import React from "react"
 import { withTheme } from "styled-components"
+import Header from './../header/Header'
 
 const Layout = ({ children }) => {
   return (
     <>
-      {/* <Header /> */}
+      <Header />
       <div
         style={{
           paddingTop: "50px",

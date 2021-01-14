@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components'
-import reset from 'styled-reset'
+import reset from './reset.css'
 
 export const GlobalStyle = createGlobalStyle`
   ${reset}
@@ -17,6 +17,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     letter-spacing: 0;
     background-color: ${({ theme }) => theme.backgroundColor.primary};
+    display: flex;
+    justify-content: center;
   }
 `
 
