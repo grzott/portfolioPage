@@ -1,17 +1,6 @@
 import { createGlobalStyle } from 'styled-components'
 import reset from 'styled-reset'
 
-export const theme = {
-    color: {
-        primary: '#E8DFDA',
-        secondary: '#285D9E',
-    },
-    backgroundColor: {
-        primary: '#303231',
-        secondary: '#252727',
-    }
-}
-
 export const GlobalStyle = createGlobalStyle`
   ${reset}
 
@@ -21,7 +10,7 @@ export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto, sans-serif';
     font-size: 16px;
   }
   body {
@@ -30,3 +19,5 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.backgroundColor.primary};
   }
 `
+
+//${({ theme }) => theme.backgroundColor.primary}

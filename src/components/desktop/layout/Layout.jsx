@@ -1,4 +1,5 @@
 import React from "react"
+import { withTheme } from "styled-components"
 import Header from "../header/Header"
 
 const Layout = ({ children }) => {
@@ -17,4 +18,4 @@ const Layout = ({ children }) => {
   )
 }
 
-export default Layout
+export default withTheme(Layout)

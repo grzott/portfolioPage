@@ -4,6 +4,10 @@
  * See: https://www.gatsbyjs.com/docs/gatsby-config/
  */
 
+// const __dirname = 'D:/PR/go-portfolio'
+const path = require('path');
+
+
 module.exports = {
   plugins: [
     `gatsby-plugin-styled-components`,

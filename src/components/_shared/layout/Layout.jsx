@@ -3,15 +3,22 @@ import MobileLayout from '../../mobile/layout/Layout'
 import DesktopLayout from '../../desktop/layout/Layout'
 import { isMobile } from "react-device-detect"
 import { GlobalStyle } from '../../../theme/global-styles'
+import { withTheme } from 'styled-components'
 
-const Layout = ({ children }) => {
+const Layout = withTheme(({ children, theme }) => {
   if (isMobile)
     return (
-      <MobileLayout>{children}</MobileLayout>
+      <>
+        <GlobalStyle theme={theme} />
+        <MobileLayout>{children}</MobileLayout>
+      </>
     )
   return (
-    <DesktopLayout>{children}</DesktopLayout>
+    <>
+      <GlobalStyle />
+      <DesktopLayout>{children}</DesktopLayout>
+    </>
   )
-}
+})
 
 export default Layout

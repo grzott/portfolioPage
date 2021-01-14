@@ -1,16 +1,12 @@
 import React from 'react'
-import { ThemeProvider } from 'styled-components'
+import { ThemeProvider } from 'styled-components';
 import Layout from './src/components/_shared/layout/Layout'
-import { GlobalStyle, theme } from './src/theme/global-styles'
+import { lightTheme, darkTheme } from './src/theme/Themes'
 
+let toggleTheme = false
 
 export const wrapRootElement = ({ element }) => (
-    <>
-        <ThemeProvider theme={theme}>
-
-            <GlobalStyle />
-            <Layout>{element}</Layout>
-
-        </ThemeProvider>
-    </>
+    <ThemeProvider theme={toggleTheme ? lightTheme : darkTheme}>
+        <Layout>{element}</Layout>
+    </ThemeProvider>
 )
