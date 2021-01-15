@@ -18,6 +18,7 @@ const Container = styled.div`
   bottom: 0;
   left: 0;
   background-color: ${({ theme }) => theme.backgroundColor.opacity};
+  transition: 0.9s ease
 `
 
 const Footer = ({ theme }) => {

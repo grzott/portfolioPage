@@ -3,19 +3,18 @@ import { Link } from "gatsby"
 import { Wrapper, Nav, Switches } from "./styles"
 import { withTheme } from "styled-components"
 import Icon from '../../_shared/customIcon/CustomIcon'
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 import { actions } from '../../../redux/actionTypes'
 
 const Header = ({ theme }) => {
   const [toggleTheme, setTheme] = useState(false)
+  const [toggleLang, setLang] = useState(false)
   const dispatch = useDispatch()
-
-  const toggler = useSelector(state => state.toggleTheme)
+  const [titles, setTitles] = useState({})
 
   useEffect(() => {
-    console.log('toggleTheme: ', toggleTheme)
-    console.log('toggler: ', toggler)
-  }, [toggleTheme])
+    setTitles(theme.lang.nav)
+  }, [theme])
 
   useEffect(() => {
     if (toggleTheme) {
@@ -31,6 +30,24 @@ const Header = ({ theme }) => {
     }
   }, [toggleTheme, actions])
 
+  useEffect(() => {
+    if (toggleLang) {
+      dispatch({
+        type: actions.TOGGLE_LANGUAGE,
+        payload: false,
+      })
+    } else {
+      dispatch({
+        type: actions.TOGGLE_LANGUAGE,
+        payload: true,
+      })
+    }
+  }, [toggleLang, actions])
+
+  const handleLang = () => {
+    setLang(!toggleLang)
+    console.log('lang: ', toggleLang)
+  }
 
   const NavLink = ({ children, to, activeStyle }) => (
     <Link
@@ -47,13 +64,15 @@ const Header = ({ theme }) => {
   return (
     <Wrapper>
       <Nav>
-        <NavLink activeStyle={activeStyle} to="/">Home</NavLink>
-        <NavLink activeStyle={activeStyle} to="/aboutme/">About Me</NavLink>
-        <NavLink activeStyle={activeStyle} to="/skills/">Skills</NavLink>
-        <NavLink activeStyle={activeStyle} to="/projects/">Projects</NavLink>
-        <NavLink activeStyle={activeStyle} to="/contact/">Contact</NavLink>
+        <NavLink activeStyle={activeStyle} to="/">{titles.home}</NavLink>
+        <NavLink activeStyle={activeStyle} to="/aboutme/">{titles.aboutme}</NavLink>
+        <NavLink activeStyle={activeStyle} to="/skills/">{titles.skills}</NavLink>
+        <NavLink activeStyle={activeStyle} to="/projects/">{titles.projects}</NavLink>
+        <NavLink activeStyle={activeStyle} to="/contact/">{titles.contact}</NavLink>
         <Switches>
           <Icon name={'bulb'} toggleTheme={toggleTheme} setTheme={setTheme} />
+          <div onClick={handleLang}>PL</div>
+
         </Switches>
       </Nav>
 

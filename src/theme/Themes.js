@@ -58,7 +58,7 @@ export const lightTheme = {
 export const pl = {
     lang: {
         nav: {
-            home: 'Strona startowa',
+            home: 'Strona Główna',
             aboutme: 'O mnie',
             skills: 'Umiejęstności',
             projects: 'Projekty',
@@ -66,7 +66,7 @@ export const pl = {
         },
         text: {
             home: {
-                primary: 'Im Grzesiek, Front-End ',
+                primary: 'Jestem Grzesiek, Front-End ',
                 secondary: 'Developer',
             },
             aboutme: {

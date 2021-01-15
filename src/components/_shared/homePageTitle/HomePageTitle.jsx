@@ -12,6 +12,7 @@ const Title = styled.h1`
   left: 50%;
   transform: translate(-50%, -50%);
   pointer-events: none;
+  transition: 0.9s ease
 `
 
 const HomePageTitle = () => {

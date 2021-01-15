@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useState } from "react"
 import { withTheme } from "styled-components"
 import CustomText from "../../components/_shared/customText/CustomText"
 import CustomTitle from '../../components/_shared/customTitle/CustomTitle'
@@ -7,18 +7,22 @@ import Icon from '../../components/_shared/customIcon/CustomIcon'
 import Image from './Image'
 
 const DesktopAboutMe = ({ theme }) => {
+  const [title, setTitle] = useState('')
+  const [texts, setTexts] = useState({})
 
   useEffect(() => {
-    console.log('ok')
-    console.log('theme: ', theme)
-  }, [])
+    setTitle(theme.lang.title.aboutme)
+    setTexts(theme.lang.text.aboutme)
+  }, [theme])
+
+
   return (
     <GridContainer>
-      <CustomTitle gridArea={'title'} text={theme.lang.title.aboutme} />
-      <CustomText gridArea={'primary'} text={theme.lang.text.aboutme.primary} />
-      <CustomText gridArea={'secondary'} text={theme.lang.text.aboutme.secondary} />
-      <CustomText gridArea={'tetriary'} text={theme.lang.text.aboutme.tetriary} />
-      <CustomText gridArea={'quaternary'} text={theme.lang.text.aboutme.quaternary} />
+      <CustomTitle gridArea={'title'} text={title} />
+      <CustomText gridArea={'primary'} text={texts.primary} />
+      <CustomText gridArea={'secondary'} text={texts.secondary} />
+      <CustomText gridArea={'tetriary'} text={texts.tetriary} />
+      <CustomText gridArea={'quaternary'} text={texts.quaternary} />
       <IconContainer gridArea={'icons'}>
         <Icon name={'linkedIn'} isLink={true} link={'https://www.linkedin.com/in/grzegorz-otto/'} />
         <Icon name={'gitlab'} isLink={true} link={'https://gitlab.com/grzott'} />

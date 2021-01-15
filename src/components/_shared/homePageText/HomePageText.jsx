@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import styled, { withTheme } from "styled-components"
 
 const Positioner = styled.div`
@@ -24,12 +24,17 @@ color: ${({ theme }) => theme.color.secondary};
 `
 
 const HomePageText = ({ theme }) => {
+  const [texts, setTexts] = useState({})
+
+  useEffect(() => {
+    setTexts(theme.lang.text.home)
+  }, [theme])
 
   return (
     <Positioner>
-      <Text>{theme.lang.text.home.primary}
+      <Text>{texts.primary}
         <TextHighlighted>
-          {theme.lang.text.home.secondary}
+          {texts.secondary}
         </TextHighlighted>
       </Text>
     </Positioner>
