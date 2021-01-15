@@ -17,6 +17,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.backgroundColor.primary};
     
   }
+  .icon-aboutme {
+    fill: ${({ theme }) => theme.color.secondary};
+  }
 `
-
-//${({ theme }) => theme.backgroundColor.primary}

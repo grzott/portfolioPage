@@ -10,13 +10,14 @@ const Text = styled.p`
   line-height: 24px;
   padding-bottom: 20px;
   pointer-events: none;
+  padding: 10px 0;
 `
 const Container = styled.div`
   width: 100%;
   position: fixed;
   bottom: 0;
   left: 0;
-
+  background-color: ${({ theme }) => theme.backgroundColor.opacity};
 `
 
 const Footer = ({ theme }) => {

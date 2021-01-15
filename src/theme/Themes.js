@@ -7,6 +7,8 @@ export const darkTheme = {
     backgroundColor: {
         primary: '#303231', // gray
         secondary: '#252727', // dark gray
+        opacity: 'rgba(48, 50, 49, 0.5)' // gray x 0.5 opacity
+
     },
     font: {
         primary: 'Roboto, sans-serif',
