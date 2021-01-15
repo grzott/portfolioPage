@@ -16,24 +16,28 @@ width: 100%;
 
 export const Nav = styled.nav`
   display: flex;
+  margin: 0 1em 0 0;
   &>a {
-    margin: 0 1em;
+    margin: 0 2em;
     color: ${({ theme }) => theme.color.primary};
     font-family: ${({ theme }) => theme.font.secondary};
     font-size: ${({ theme }) => theme.size.medium};
     font-weight: ${({ theme }) => theme.fontStyle.regular};
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover {
       color: ${({ theme }) => theme.color.focused};
     }
   }
-
 `
 
 export const Switches = styled.div`
   display: grid;
-  grid-template: 1fr / auto;
-  grid-gap: 20px;
-
+  grid-template: 1fr / 1fr 1fr 1fr 1fr;
+  justify-content: center;
+  grid-gap: 10px;
+  margin: 0 1em;
 `
 
 

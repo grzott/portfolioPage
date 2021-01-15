@@ -20,4 +20,7 @@ export const GlobalStyle = createGlobalStyle`
   .icon-aboutme {
     fill: ${({ theme }) => theme.color.secondary};
   }
+  .activeLang {
+    color: ${({ theme }) => theme.color.focused};
+  }
 `

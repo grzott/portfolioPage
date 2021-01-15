@@ -3,7 +3,7 @@ import { createStore } from "redux"
 
 const initialState = {
     toggleTheme: true,
-    toggleLanguage: false
+    toggleLanguage: true
 };
 
 const reducer = (state = initialState, action) => {

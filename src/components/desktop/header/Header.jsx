@@ -5,6 +5,7 @@ import { withTheme } from "styled-components"
 import Icon from '../../_shared/customIcon/CustomIcon'
 import { useDispatch } from "react-redux"
 import { actions } from '../../../redux/actionTypes'
+import CustomLangSwitcher from '../../_shared/customLangSwitcher/CustomLangSwitcher'
 
 const Header = ({ theme }) => {
   const [toggleTheme, setTheme] = useState(false)
@@ -44,11 +45,6 @@ const Header = ({ theme }) => {
     }
   }, [toggleLang, actions])
 
-  const handleLang = () => {
-    setLang(!toggleLang)
-    console.log('lang: ', toggleLang)
-  }
-
   const NavLink = ({ children, to, activeStyle }) => (
     <Link
       to={to} activeStyle={activeStyle}
@@ -71,8 +67,7 @@ const Header = ({ theme }) => {
         <NavLink activeStyle={activeStyle} to="/contact/">{titles.contact}</NavLink>
         <Switches>
           <Icon name={'bulb'} toggleTheme={toggleTheme} setTheme={setTheme} />
-          <div onClick={handleLang}>PL</div>
-
+          <CustomLangSwitcher toggleLang={toggleLang} setLang={setLang} />
         </Switches>
       </Nav>
 

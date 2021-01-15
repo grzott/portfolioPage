@@ -8,6 +8,11 @@ const IconContainer = styled.div`
 color: ${props => props.color};
 width: ${props => props.w ? props.w : '60px'};
 height: ${props => props.h ? props.h : '60px'};
+cursor: pointer;
+&:hover {
+  color: ${({ theme }) => theme.color.focused};
+}
+
 `
 const LinkIconContainer = styled.a`
 color: ${props => props.color};
@@ -25,11 +30,9 @@ const CustomIcon = ({ theme, isLink, name, link, setTheme, toggleTheme }) => {
   }
   if (name && name === 'bulb') {
     return (
-
-      <IconContainer w={'45px'} h={'45px'} color={theme.color.primary} onClick={() => setTheme(!toggleTheme)}>
+      <IconContainer name={name} w={'35px'} h={'35px'} color={theme.color.primary} onClick={() => setTheme(!toggleTheme)}>
         <BulbIcon />
       </IconContainer>
-
     )
 
   }
