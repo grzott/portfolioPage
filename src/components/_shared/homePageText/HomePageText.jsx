@@ -27,9 +27,9 @@ const HomePageText = ({ theme }) => {
 
   return (
     <Positioner>
-      <Text>{theme.lang.eng.text.home.primary}
+      <Text>{theme.lang.text.home.primary}
         <TextHighlighted>
-          {theme.lang.eng.text.home.secondary}
+          {theme.lang.text.home.secondary}
         </TextHighlighted>
       </Text>
     </Positioner>

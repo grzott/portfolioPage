@@ -1,8 +1,6 @@
 import styled from "styled-components"
-import { Link } from "gatsby"
 
 export const Wrapper = styled.header` 
-width: 100%;
   display: flex;
   justify-content: flex-end;
   font-size: 30px;
@@ -15,7 +13,15 @@ width: 100%;
 `
 
 export const Nav = styled.nav`
-  
+  display: flex;
+  &>a {
+    margin: 0 1em;
+    color: ${({ theme }) => theme.color.primary};
+    &:hover {
+      color: ${({ theme }) => theme.color.focused};
+    }
+  }
+
 `
 
 export const Switches = styled.div`

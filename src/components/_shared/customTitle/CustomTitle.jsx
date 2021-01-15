@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { withTheme } from "styled-components"
 
 const Title = styled.h1`
   color: ${({ theme }) => theme.color.secondary};
@@ -7,11 +7,12 @@ const Title = styled.h1`
   font-size: ${({ theme }) => theme.size.big};
   font-weight: ${({ theme }) => theme.fontStyle.bold};
   grid-area: ${props => props.gridArea};
-  padding: 0.25em;
+  line-height: 30px;
+  letter-spacing: 0.1em;
 `
 
 const CustomTitle = ({ text, gridArea }) => {
   return <Title gridArea={gridArea}>{text}</Title>
 }
 
-export default CustomTitle
+export default withTheme(CustomTitle)

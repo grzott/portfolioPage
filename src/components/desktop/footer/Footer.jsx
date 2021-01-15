@@ -23,7 +23,7 @@ const Container = styled.div`
 const Footer = ({ theme }) => {
   return (
     <Container>
-      <Text>{theme.lang.eng.footer.text}</Text>
+      <Text>{theme.lang.footer.text}</Text>
     </Container>
   )
 }

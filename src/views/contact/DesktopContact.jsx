@@ -4,7 +4,7 @@ import CustomTitle from '../../components/_shared/customTitle/CustomTitle'
 
 
 const DesktopContact = ({ theme }) => {
-  return <CustomTitle text={theme.lang.eng.title.contact} />
+  return <CustomTitle text={theme.lang.title.contact} />
 }
 
 export default withTheme(DesktopContact)
