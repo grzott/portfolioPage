@@ -3,7 +3,10 @@ import { ThemeProvider } from 'styled-components';
 import Layout from './src/components/_shared/layout/Layout'
 import { lightTheme, darkTheme, pl, eng } from './src/theme/Themes'
 
-let toggleTheme = false
+import { Provider, useSelector } from 'react-redux'
+import store from './src/redux/store'
+
+// let toggleTheme = false
 let toggleLang = false
 
 const themePl = (currentTheme) => ({
@@ -16,10 +19,21 @@ const themeEng = (currentTheme) => ({
     ...eng,
 });
 
-export const wrapRootElement = ({ element }) => (
-    <ThemeProvider theme={toggleLang ? themePl : themeEng}>
-        <ThemeProvider theme={toggleTheme ? lightTheme : darkTheme}>
-            <Layout>{element}</Layout>
+const App = ({ element }) => {
+
+    const toggleTheme = useSelector(state => state.toggleTheme)
+
+    return (
+        <ThemeProvider theme={toggleLang ? themePl : themeEng}>
+            <ThemeProvider theme={toggleTheme ? lightTheme : darkTheme}>
+                <Layout>{element}</Layout>
+            </ThemeProvider>
         </ThemeProvider>
-    </ThemeProvider>
+    )
+}
+
+export const wrapRootElement = ({ element }) => (
+    <Provider store={store}>
+        <App element={element} />
+    </Provider>
 )

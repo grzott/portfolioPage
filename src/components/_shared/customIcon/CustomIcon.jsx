@@ -1,12 +1,13 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { withTheme } from "styled-components"
 import LinkedInIcon from '../../../assets/svg/linkedIn.svg'
 import GithubIcon from '../../../assets/svg/github.svg'
+import BulbIcon from '../../../assets/svg/bulb.svg'
 
 const IconContainer = styled.div`
 color: ${props => props.color};
-width: 60px;
-height: 60px;
+width: ${props => props.w ? props.w : '60px'};
+height: ${props => props.h ? props.h : '60px'};
 `
 const LinkIconContainer = styled.a`
 color: ${props => props.color};
@@ -14,18 +15,29 @@ width: 60px;
 height: 60px;
 margin: 0 20px;
 `
-const CustomIcon = ({ isLink, name, link }) => {
+const CustomIcon = ({ theme, isLink, name, link, setTheme, toggleTheme }) => {
+
   if (isLink) {
     return (
       <LinkIconContainer href={link}>
         {name === 'linkedIn' ? <LinkedInIcon /> : <GithubIcon />}
       </LinkIconContainer>)
   }
+  if (name && name === 'bulb') {
+    return (
+
+      <IconContainer w={'45px'} h={'45px'} color={theme.color.primary} onClick={() => setTheme(!toggleTheme)}>
+        <BulbIcon />
+      </IconContainer>
+
+    )
+
+  }
   return (
     <IconContainer >
-      <LinkedInIcon />
+      <p>icon</p>
     </IconContainer>
   )
 }
 
-export default CustomIcon
+export default withTheme(CustomIcon)
