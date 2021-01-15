@@ -5,10 +5,13 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.backgroundColor.secondary};
   font-family: ${({ theme }) => theme.font.primary};
   font-size: 400px;
-  font-weight: ${({ theme }) => theme.fontStyle.bold};
+  font-weight: ${({ theme }) => theme.fontStyle.black};
   text-align: center;
-  position: relative;
-  padding-top: 100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 `
 
 const HomePageTitle = () => {

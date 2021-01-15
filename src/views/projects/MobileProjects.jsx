@@ -3,8 +3,8 @@ import { withTheme } from "styled-components"
 import CustomTitle from '../../components/_shared/customTitle/CustomTitle'
 
 
-const MobileAboutMe = ({ theme }) => {
-  return <CustomTitle text={theme.lang.eng.title.aboutme} />
+const MobileProjects = ({ theme }) => {
+  return <CustomTitle text={theme.lang.eng.title.projects} />
 }
 
-export default withTheme(MobileAboutMe)
+export default withTheme(MobileProjects)

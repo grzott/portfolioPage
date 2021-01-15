@@ -9,6 +9,7 @@ const Text = styled.p`
   text-align: center;
   line-height: 24px;
   padding-bottom: 20px;
+  pointer-events: none;
 `
 const Container = styled.div`
   width: 100%;

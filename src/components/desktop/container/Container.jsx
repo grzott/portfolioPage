@@ -4,10 +4,8 @@ import styled, { withTheme } from "styled-components"
 
 const Container = styled.div`
 max-width: 1190px;
-display: flex;
-align-self: center;
-justify-content: center;
-align-items: center;
+padding-top: 100px;
+margin: 0 auto;
 `
 
 const DesktopContainer = ({ children, theme }) => {

@@ -1,7 +1,10 @@
 import styled from "styled-components"
+import { Link } from "gatsby"
 
 export const Wrapper = styled.header` 
-  align-self: flex-end;
+width: 100%;
+  display: flex;
+  justify-content: flex-end;
   font-size: 30px;
   color: ${({ theme }) => theme.color.primary};
   position: fixed;
@@ -9,3 +12,12 @@ export const Wrapper = styled.header`
   right: 0;
   padding: 20px 20px
 `
+
+export const Nav = styled.nav`
+  
+`
+
+export const Switches = styled.div`
+  
+`
+

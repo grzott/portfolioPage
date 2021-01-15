@@ -1,25 +1,44 @@
 import React from "react"
 import { Link } from "gatsby"
-import { Wrapper } from "./styles"
-
-const ListLink = props => (
-  <li style={{ display: `inline-block`, marginRight: `1rem` }}>
-    <Link to={props.to}>{props.children}</Link>
-  </li>
-)
+import { Wrapper, Nav, Switches } from "./styles"
+import styled, { withTheme } from "styled-components"
 
 const Header = () => {
+  const NavLink = props => (
+    <Link
+      {...props}
+      getProps={({ isPartiallyCurrent }) => {
+        return {
+          style: {
+            color: isPartiallyCurrent ? `${({ theme }) => theme.color.focused}` : `${({ theme }) => theme.color.primary}`,
+          },
+        }
+      }}
+    />
+  )
+
+  const HeaderLink = styled(NavLink)`
+    margin: 0 1.5rem;
+    color: ${({ theme }) => theme.color.primary};
+    &:hover {
+      color: ${({ theme }) => theme.color.focused};
+    }
+  `
   return (
 
     <Wrapper>
-      <ListLink to="/">Home</ListLink>
-      <ListLink to="/aboutme/">About Me</ListLink>
-      <ListLink to="/skills/">Skills</ListLink>
-      <ListLink to="/projects/">Projects</ListLink>
-      <ListLink to="/contact/">Contact</ListLink>
+      <Nav>
+        <HeaderLink to="/">Home</HeaderLink>
+        <HeaderLink to="/aboutme/">About Me</HeaderLink>
+        <HeaderLink to="/skills/">Skills</HeaderLink>
+        <HeaderLink to="/projects/">Projects</HeaderLink>
+        <HeaderLink to="/contact/">Contact</HeaderLink>
+      </Nav>
+
+
     </Wrapper>
 
   )
 }
 
-export default Header
+export default withTheme(Header)
