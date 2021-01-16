@@ -1,7 +1,8 @@
 import styled from "styled-components"
 
 export const Wrapper = styled.header` 
-width: 100%;
+  z-index: 100;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
   font-size: 30px;

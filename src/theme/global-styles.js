@@ -17,10 +17,22 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.backgroundColor.primary};
     transition: 0.9s ease  
   }
-  .icon-aboutme {
-    fill: ${({ theme }) => theme.color.secondary};
-  }
   .activeLang {
     color: ${({ theme }) => theme.color.focused};
   }
+
+  .icon-link {
+    fill: ${({ theme }) => theme.color.secondary};
+    &:hover {
+      fill: ${({ theme }) => theme.color.focused};
+    }
+  }
+
+  .icon-link-www {
+    color: ${({ theme }) => theme.color.secondary};
+    &:hover {
+      color: ${({ theme }) => theme.color.focused};
+    }
+  }
+
 `

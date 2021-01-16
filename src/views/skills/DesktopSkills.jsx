@@ -3,6 +3,7 @@ import { withTheme } from "styled-components"
 import CustomTitle from '../../components/_shared/customTitle/CustomTitle'
 import CustomText from "../../components/_shared/customText/CustomText"
 import { GridContainer } from "./styles"
+import SkillsIconsContainer from "../../components/_shared/skillsIconsContainer/SkillsIconsContainer"
 
 const DesktopSkills = ({ theme }) => {
   const [title, setTitle] = useState('')
@@ -20,6 +21,7 @@ const DesktopSkills = ({ theme }) => {
       <CustomText gridArea={'secondary'} text={texts.secondary} />
       <CustomText gridArea={'tetriary'} text={texts.tetriary} />
       <CustomText gridArea={'quaternary'} text={texts.quaternary} />
+      <SkillsIconsContainer />
     </GridContainer>
 
   )
