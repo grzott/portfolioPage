@@ -8,39 +8,46 @@ import {
   ProjectTitle,
   ProjectLinks
 } from "./styles"
-import CustomIcon from "../../components/_shared/customIcon/CustomIcon"
+import LinkIcon from "../../components/_shared/linkIcon/LinkIcon"
 
 const projects = [
   {
     'title': 'Portfolio',
-    'link': 'https://www.google.pl',
-    'gitlabLink': 'https://www.joemonster.org',
+    'link': 'https://gitlab.com/grzott/go-portfolio',
+    'linkGitlab': 'https://gitlab.com/grzott/go-portfolio',
     'imgSrc': '/p1.png'
   },
   {
     'title': 'Aplikacja Polskie Radio Kierowców',
-    'link': 'link2',
-    'linkGitlab': 'link2',
+    'link': 'https://play.google.com/store/apps/details?id=com.pl_radiokierowcow_mobile&hl=pl&gl=US',
     'imgSrc': '/p2.png'
   },
   {
-    'title': 'Pprojekt3',
-    'link': 'link3',
-    'linkGitlab': 'link3',
-    'imgSrc': ''
+    'title': 'Aplikacja Polskie Radio',
+    'link': 'https://play.google.com/store/apps/details?id=pl.polskieradio.mobile&hl=pl&gl=US',
+    'imgSrc': '/p3.png'
   },
-
 ]
 
-const Project = withTheme(({ title, link, imgSrc, linkGitlab }) => {
+const Project = withTheme(({ title, link, linkGitlab, imgSrc }) => {
+  const [isShown, setIsShown] = useState(false)
+
   return (
-    <ProjectContainer>
-      <ProjectTitle>{title}</ProjectTitle>
-      <ProjectLinks>
-        <CustomIcon name='link' link={link} />
-        <CustomIcon name='github' link={link} linkGitlab={linkGitlab} />
+    <ProjectContainer
+      onMouseEnter={() => setIsShown(true)}
+      onMouseLeave={() => setIsShown(false)}>
+      <ProjectTitle display={isShown ? 'flex' : 'none'}>
+        {title}
+      </ProjectTitle>
+      <ProjectLinks display={isShown ? 'flex' : 'none'}>
+        {link ?
+          <LinkIcon size={'60px'} name='link' link={link} />
+          : <></>}
+        {linkGitlab ?
+          <LinkIcon size={'60px'} name='gitlab' link={linkGitlab} />
+          : <> </>}
       </ProjectLinks>
-      <Img src={imgSrc} alt='photo' />
+      {imgSrc ? <Img opacity={isShown ? '0.1' : '1'} src={imgSrc} alt='photo' /> : <></>}
     </ProjectContainer>
 
   )
@@ -62,7 +69,7 @@ const DesktopProjects = ({ theme }) => {
             key={i}
             title={data.title}
             link={data.link}
-            gitlabLink={data.gitlabLink}
+            linkGitlab={data.linkGitlab}
             imgSrc={data.imgSrc} />)
       }
     </GridContainer>

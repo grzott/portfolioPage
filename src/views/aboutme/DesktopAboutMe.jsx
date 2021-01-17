@@ -3,7 +3,7 @@ import { withTheme } from "styled-components"
 import CustomText from "../../components/_shared/customText/CustomText"
 import CustomTitle from '../../components/_shared/customTitle/CustomTitle'
 import { GridContainer, IconContainer } from "./styles"
-import Icon from '../../components/_shared/customIcon/CustomIcon'
+import LinkIcon from '../../components/_shared/linkIcon/LinkIcon'
 import Image from './Image'
 
 const DesktopAboutMe = ({ theme }) => {
@@ -24,8 +24,8 @@ const DesktopAboutMe = ({ theme }) => {
       <CustomText gridArea={'tetriary'} text={texts.tetriary} />
       <CustomText gridArea={'quaternary'} text={texts.quaternary} />
       <IconContainer gridArea={'icons'}>
-        <Icon name={'linkedIn'} isLink={true} link={'https://www.linkedin.com/in/grzegorz-otto/'} />
-        <Icon name={'gitlab'} isLink={true} link={'https://gitlab.com/grzott'} />
+        <LinkIcon size={'60px'} name={'linkedin'} link={'https://www.linkedin.com/in/grzegorz-otto/'} />
+        <LinkIcon size={'60px'} name={'gitlab'} link={'https://gitlab.com/grzott'} />
       </IconContainer>
       <Image gridArea={'img'} />
     </GridContainer>

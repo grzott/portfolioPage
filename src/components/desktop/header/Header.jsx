@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { Wrapper, Nav, Switches } from "./styles"
 import { withTheme } from "styled-components"
-import Icon from '../../_shared/customIcon/CustomIcon'
+import BulbIcon from '../../_shared/bulbIcon/BulbIcon'
 import { useDispatch } from "react-redux"
 import { actions } from '../../../redux/actionTypes'
 import CustomLangSwitcher from '../../_shared/customLangSwitcher/CustomLangSwitcher'
@@ -66,7 +66,7 @@ const Header = ({ theme }) => {
         <NavLink activeStyle={activeStyle} to="/projects/">{titles.projects}</NavLink>
         <NavLink activeStyle={activeStyle} to="/contact/">{titles.contact}</NavLink>
         <Switches>
-          <Icon name={'bulb'} toggleTheme={toggleTheme} setTheme={setTheme} />
+          <BulbIcon size={'35px'} toggleTheme={toggleTheme} setTheme={setTheme} />
           <CustomLangSwitcher toggleLang={toggleLang} setLang={setLang} />
         </Switches>
       </Nav>

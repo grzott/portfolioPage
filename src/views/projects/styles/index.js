@@ -4,7 +4,7 @@ export const GridContainer = styled.div`
   margin: 20px 0;
   display: grid;
   grid-template: auto / 1fr 1fr 1fr;
-  grid-gap: 10px;
+  grid-row-gap: 60px;
   justify-items: center;
   &>h1 {
     margin-top: 100px;
@@ -21,18 +21,21 @@ export const ProjectContainer = styled.div`
   align-items: center;
   flex-direction: column;
   position: relative;
+  transition: 0.9s ease;
 `
 
-export const Img = styled.img`
+export const Img = styled.div`
+background-image: url(${props => props.src});
+background-size: cover;
+background-position: center;
   width: 300px;
   height: 300px;
   position: absolute;
-  transition: 0.9s ease;
   z-index: 1;
-  &:hover {
-    transform: scale(0.9);
-}
+  transition: 0.5s linear;
+  opacity: ${props => props.opacity}
 `
+
 export const ProjectTitle = styled.h2`
   color: ${({ theme }) => theme.color.primary};
   font-family: ${({ theme }) => theme.font.secondary};
@@ -40,12 +43,13 @@ export const ProjectTitle = styled.h2`
   font-weight: ${({ theme }) => theme.fontStyle.regular};
   z-index: 2;
   text-align: center;
+  display: ${props => props.display};
 `
 
-export const ProjectLinks = styled.a`
+export const ProjectLinks = styled.div`
   z-index: 2; 
   display: grid;
   grid-template: 1fr / 1fr 1fr;
   grid-gap: 20px;
-  
+  display: ${props => props.display};
 `
