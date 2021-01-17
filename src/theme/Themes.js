@@ -84,8 +84,9 @@ export const pl = {
             projects: '',
             contact: {
                 name: 'imię',
-                email: 'email',
+                email: 'e-mail',
                 msg: 'wiadomość',
+                btn: 'Wyślij',
             },
         },
         title: {
@@ -130,8 +131,9 @@ export const eng = {
             projects: '',
             contact: {
                 name: 'name',
-                email: 'email',
+                email: 'e-mail',
                 msg: 'message',
+                btn: 'Send'
             },
         },
         title: {

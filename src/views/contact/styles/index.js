@@ -1,8 +1,66 @@
 import styled from "styled-components"
 
-export const Title = styled.h1`
-  font-size: 30px;
-  color: ${({ theme }) => theme.color.primary};
+export const FormContainer = styled.form`
+  margin: 0 2vw;
+  width: 100%;
+  height: 80vh;
+  background-color: ${({ theme }) => theme.backgroundColor.secondary};
+  padding: 60px 100px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.9s ease;
 `
 
-//${({ theme }) => theme.color.primary}
+export const Input = styled.input`
+border: none;
+  width: 90%;
+  height: 15%;
+  background-color: ${({ theme }) => theme.backgroundColor.primary};
+  margin: 50px 100px 0 100px;
+  display: flex;
+  justify-content: center;
+  transition: 0.9s ease;
+  ::placeholder {
+    color: ${({ theme }) => theme.color.primary};
+    font-family: ${({ theme }) => theme.font.secondary};
+    font-size: ${({ theme }) => theme.size.small};
+    font-weight: ${({ theme }) => theme.fontStyle.regular};
+    opacity: 0.5;
+    line-height: 30px;
+    letter-spacing: 0.1em;
+    padding-left: 20px;
+  }
+`
+
+export const Textarea = styled.textarea`
+  border: none;
+  resize: none;
+  width: 90%;
+  height: 35%;
+  background-color: ${({ theme }) => theme.backgroundColor.primary};
+  margin: 50px 100px 0 100px;
+  transition: 0.9s ease;
+  ::placeholder {
+    color: ${({ theme }) => theme.color.primary};
+    font-family: ${({ theme }) => theme.font.secondary};
+    font-size: ${({ theme }) => theme.size.small};
+    font-weight: ${({ theme }) => theme.fontStyle.regular};
+    opacity: 0.5;
+    line-height: 30px;
+    letter-spacing: 0.1em;
+    padding: 20px 0 0 20px;
+  }
+`
+export const Button = styled.button`
+border: none;
+  margin-top: 50px;
+  width: 25%;
+  height: 50px;
+  background-color: ${({ theme }) => theme.color.secondary};
+  transition: 0.9s ease;
+  color: ${({ theme }) => theme.color.primary};
+  font-family: ${({ theme }) => theme.font.secondary};
+  font-size: ${({ theme }) => theme.size.regular};
+  font-weight: ${({ theme }) => theme.fontStyle.regular};
+`
