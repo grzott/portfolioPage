@@ -15,10 +15,11 @@ export const darkTheme = {
         secondary: 'Poppins, sans-serif',
     },
     size: {
-        big: '45px',
-        medium: '24px',
-        regular: '20px',
-        small: '16px',
+        base: `${16}px`,
+        big: '2.85rem',
+        medium: '1.5rem',
+        regular: '1.25rem',
+        small: '1rem',
     },
     fontStyle: {
         black: '900',
