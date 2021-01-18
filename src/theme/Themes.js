@@ -90,7 +90,7 @@ export const pl = {
             },
         },
         title: {
-            home: 'Strona startowa',
+            home: 'Cześć',
             aboutme: 'O mnie',
             skills: 'Umiejęstności',
             projects: 'Projekty',
@@ -137,7 +137,7 @@ export const eng = {
             },
         },
         title: {
-            home: 'Home',
+            home: 'Hello',
             aboutme: 'About Me',
             skills: 'Skills',
             projects: 'Projects',

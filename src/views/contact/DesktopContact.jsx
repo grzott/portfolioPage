@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react"
 import { withTheme } from "styled-components"
-import CustomTitle from '../../components/_shared/customTitle/CustomTitle'
+import CustomTitle from "../../components/_shared/customTitle/CustomTitle"
 import { FormContainer, Input, Textarea, Button } from "./styles"
 
 const DesktopContact = ({ theme }) => {
-  const [title, setTitle] = useState('')
+  const [title, setTitle] = useState("")
   const [texts, setTexts] = useState({})
 
   useEffect(() => {
@@ -24,4 +24,3 @@ const DesktopContact = ({ theme }) => {
 }
 
 export default withTheme(DesktopContact)
-

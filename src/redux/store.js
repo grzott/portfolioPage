@@ -2,8 +2,8 @@ import { actions } from "./actionTypes";
 import { createStore } from "redux"
 
 const initialState = {
-    toggleTheme: true,
-    toggleLanguage: true
+    toggleTheme: false,
+    toggleLanguage: false
 };
 
 const reducer = (state = initialState, action) => {

@@ -1,5 +1,5 @@
 import React from "react"
-import styled from "styled-components"
+import styled, { withTheme } from "styled-components"
 
 const Title = styled.h1`
   color: ${({ theme }) => theme.backgroundColor.secondary};
@@ -15,8 +15,8 @@ const Title = styled.h1`
   transition: 0.9s ease
 `
 
-const HomePageTitle = () => {
-  return <Title>Hello</Title>
+const HomePageTitle = ({ theme }) => {
+  return <Title>{theme.lang.title.home}</Title>
 }
 
-export default HomePageTitle
+export default withTheme(HomePageTitle)

@@ -21,8 +21,8 @@ const App = ({ element }) => {
     const toggleLang = useSelector(state => state.toggleLanguage)
 
     return (
-        <ThemeProvider theme={toggleLang ? themePl : themeEng}>
-            <ThemeProvider theme={toggleTheme ? lightTheme : darkTheme}>
+        <ThemeProvider theme={toggleLang ? themeEng : themePl}>
+            <ThemeProvider theme={toggleTheme ? darkTheme : lightTheme}>
                 <Layout>{element}</Layout>
             </ThemeProvider>
         </ThemeProvider>

@@ -15,7 +15,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     letter-spacing: 0;
     background-color: ${({ theme }) => theme.backgroundColor.primary};
-    transition: 0.9s ease  
+    transition: 0.9s ease;
   }
   .activeLang {
     color: ${({ theme }) => theme.color.focused};

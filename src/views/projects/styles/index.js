@@ -25,15 +25,16 @@ export const ProjectContainer = styled.div`
 `
 
 export const Img = styled.div`
-background-image: url(${props => props.src});
-background-size: cover;
-background-position: center;
+  background-image: url(${props => props.src});
+  background-size: cover;
+  background-position: center;
   width: 300px;
   height: 300px;
   position: absolute;
   z-index: 1;
   transition: 0.5s linear;
-  opacity: ${props => props.opacity}
+  opacity: ${props => props.opacity};
+  transform: scale(${props => props.scale});
 `
 
 export const ProjectTitle = styled.h2`

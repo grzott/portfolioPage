@@ -15,21 +15,21 @@ export const FormContainer = styled.form`
 export const Input = styled.input`
 border: none;
   width: 90%;
-  height: 15%;
+  height: 100px;
   background-color: ${({ theme }) => theme.backgroundColor.primary};
   margin: 50px 100px 0 100px;
   display: flex;
   justify-content: center;
   transition: 0.9s ease;
+  color: ${({ theme }) => theme.color.primary};
+  font-family: ${({ theme }) => theme.font.secondary};
+  font-size: ${({ theme }) => theme.size.small};
+  font-weight: ${({ theme }) => theme.fontStyle.regular};
+  line-height: 30px;
+  letter-spacing: 0.1em;
+  padding-left: 20px;
   ::placeholder {
-    color: ${({ theme }) => theme.color.primary};
-    font-family: ${({ theme }) => theme.font.secondary};
-    font-size: ${({ theme }) => theme.size.small};
-    font-weight: ${({ theme }) => theme.fontStyle.regular};
-    opacity: 0.5;
-    line-height: 30px;
-    letter-spacing: 0.1em;
-    padding-left: 20px;
+    opacity: 0.5; 
   }
 `
 
@@ -37,19 +37,19 @@ export const Textarea = styled.textarea`
   border: none;
   resize: none;
   width: 90%;
-  height: 35%;
+  height: 300px;
   background-color: ${({ theme }) => theme.backgroundColor.primary};
   margin: 50px 100px 0 100px;
   transition: 0.9s ease;
-  ::placeholder {
-    color: ${({ theme }) => theme.color.primary};
+  color: ${({ theme }) => theme.color.primary};
     font-family: ${({ theme }) => theme.font.secondary};
     font-size: ${({ theme }) => theme.size.small};
     font-weight: ${({ theme }) => theme.fontStyle.regular};
-    opacity: 0.5;
     line-height: 30px;
     letter-spacing: 0.1em;
     padding: 20px 0 0 20px;
+  ::placeholder {
+    opacity: 0.5;
   }
 `
 export const Button = styled.button`

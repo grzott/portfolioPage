@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react"
 import { Link } from "gatsby"
 import { Wrapper, Nav, Switches } from "./styles"
 import { withTheme } from "styled-components"
-import BulbIcon from '../../_shared/bulbIcon/BulbIcon'
+import BulbIcon from "../../_shared/bulbIcon/BulbIcon"
 import { useDispatch } from "react-redux"
-import { actions } from '../../../redux/actionTypes'
-import CustomLangSwitcher from '../../_shared/customLangSwitcher/CustomLangSwitcher'
+import { actions } from "../../../redux/actionTypes"
+import CustomLangSwitcher from "../../_shared/customLangSwitcher/CustomLangSwitcher"
 
 const Header = ({ theme }) => {
-  const [toggleTheme, setTheme] = useState(false)
-  const [toggleLang, setLang] = useState(false)
+  const [toggleTheme, setTheme] = useState(Boolean)
+  const [toggleLang, setLang] = useState(Boolean)
   const dispatch = useDispatch()
   const [titles, setTitles] = useState({})
 
@@ -29,7 +29,7 @@ const Header = ({ theme }) => {
         payload: true,
       })
     }
-  }, [toggleTheme, actions])
+  }, [toggleTheme])
 
   useEffect(() => {
     if (toggleLang) {
@@ -46,34 +46,43 @@ const Header = ({ theme }) => {
   }, [toggleLang, actions])
 
   const NavLink = ({ children, to, activeStyle }) => (
-    <Link
-      to={to} activeStyle={activeStyle}
-    >
+    <Link to={to} activeStyle={activeStyle}>
       {children}
     </Link>
   )
 
   const activeStyle = {
-    color: theme.color.focused
+    color: theme.color.focused,
   }
 
   return (
     <Wrapper>
       <Nav>
-        <NavLink activeStyle={activeStyle} to="/">{titles.home}</NavLink>
-        <NavLink activeStyle={activeStyle} to="/aboutme/">{titles.aboutme}</NavLink>
-        <NavLink activeStyle={activeStyle} to="/skills/">{titles.skills}</NavLink>
-        <NavLink activeStyle={activeStyle} to="/projects/">{titles.projects}</NavLink>
-        <NavLink activeStyle={activeStyle} to="/contact/">{titles.contact}</NavLink>
+        <NavLink activeStyle={activeStyle} to="/">
+          {titles.home}
+        </NavLink>
+        <NavLink activeStyle={activeStyle} to="/aboutme/">
+          {titles.aboutme}
+        </NavLink>
+        <NavLink activeStyle={activeStyle} to="/skills/">
+          {titles.skills}
+        </NavLink>
+        <NavLink activeStyle={activeStyle} to="/projects/">
+          {titles.projects}
+        </NavLink>
+        <NavLink activeStyle={activeStyle} to="/contact/">
+          {titles.contact}
+        </NavLink>
         <Switches>
-          <BulbIcon size={'35px'} toggleTheme={toggleTheme} setTheme={setTheme} />
+          <BulbIcon
+            size={"35px"}
+            toggleTheme={toggleTheme}
+            setTheme={setTheme}
+          />
           <CustomLangSwitcher toggleLang={toggleLang} setLang={setLang} />
         </Switches>
       </Nav>
-
-
     </Wrapper>
-
   )
 }
 

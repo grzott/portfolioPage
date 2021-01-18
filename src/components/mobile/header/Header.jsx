@@ -11,7 +11,7 @@ const ListLink = props => (
 const Header = () => {
   return (
     <Wrapper>
-      <ListLink to="/">Mobile Home</ListLink>
+      <ListLink to="/">Home</ListLink>
       <ListLink to="/aboutme/">About Me</ListLink>
       <ListLink to="/skills/">Skills</ListLink>
       <ListLink to="/projects/">Projects</ListLink>

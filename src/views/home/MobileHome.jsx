@@ -1,8 +1,15 @@
 import React from "react"
-import { Title } from "./styles/home"
+import HomePageTitle from '../../components/_shared/homePageTitle/HomePageTitle'
+import { withTheme } from "styled-components"
+import HomePageText from "../../components/_shared/homePageText/HomePageText"
 
-const MobileHome = () => {
-  return <Title>Hello Portfolio on Mobile!</Title>
+const MobileHome = ({ theme }) => {
+  return (
+    <>
+      <HomePageTitle />
+      <HomePageText />
+    </>
+  )
 }
 
-export default MobileHome
+export default withTheme(MobileHome)
