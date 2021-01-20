@@ -1,8 +1,10 @@
 import styled from "styled-components"
+import { isMobile } from "react-device-detect"
 
 export const GridContainer = styled.div`
 margin: 20px;
-  display: grid;
+  display: ${isMobile ? 'flex' : 'grid'};
+  flex-direction: column;
   grid-template: 1fr 1fr 1fr 1fr 1fr / 1.5fr 1fr;
   grid-template-areas: 
     "title tools"

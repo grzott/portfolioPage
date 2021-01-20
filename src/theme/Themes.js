@@ -1,3 +1,5 @@
+import { isMobile } from "react-device-detect"
+
 export const darkTheme = {
     color: {
         primary: '#E8DFDA', // nearly white
@@ -18,8 +20,14 @@ export const darkTheme = {
         base: '16px', // rem for RWD
         big: '2.5rem',
         medium: '1.5rem',
-        regular: '1rem',
+        regular: '1.25rem',
         small: '0.75rem',
+    },
+    mSize: {
+        big: '1.5rem',
+        medium: '1rem',
+        regular: '1rem',
+        small: '0.5rem',
     },
     fontStyle: {
         black: '900',
@@ -44,11 +52,17 @@ export const lightTheme = {
         secondary: 'Poppins, sans-serif',
     },
     size: {
-        base: 1, // rem for RWD
+        base: '16px', // rem for RWD
         big: '2.5rem',
         medium: '1.5rem',
         regular: '1rem',
         small: '0.75rem',
+    },
+    mSize: {
+        big: '1.5rem',
+        medium: '1rem',
+        regular: '1rem',
+        small: '0.5rem',
     },
     fontStyle: {
         black: '900',

@@ -88,11 +88,7 @@ const Header = ({ theme }) => {
         setWrapped(true)
       }}
     >
-      <Nav
-        onClick={() => {
-          setWrapped(true)
-        }}
-      >
+      <Nav>
         <NavLink
           isWrapped={isWrapped}
           setWrapped={setWrapped}

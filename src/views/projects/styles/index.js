@@ -1,9 +1,10 @@
 import styled from "styled-components"
+import { isMobile } from "react-device-detect"
 
 export const GridContainer = styled.div`
   margin: 20px 0;
   display: grid;
-  grid-template: auto / 1fr 1fr 1fr;
+  grid-template: ${isMobile ? 'auto / 1fr' : 'auto / 1fr 1fr 1fr'};
   grid-row-gap: 60px;
   justify-items: center;
   &>h1 {

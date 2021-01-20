@@ -46,6 +46,7 @@ export const Switches = styled.div`
 `
 
 export const BurgerWrapper = styled.div`
+  z-Index: 100;
   position: fixed;
   top: 0;
   right: 0;
