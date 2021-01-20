@@ -11,7 +11,7 @@ export const Wrapper = styled.header`
   right: 0;
   padding: 20px 20px;
   background-color: ${({ theme }) => theme.backgroundColor.opacity};
-  transition: 0.9s ease;
+  transition: background-color 0.9s ease;
 `
 
 export const Nav = styled.nav`

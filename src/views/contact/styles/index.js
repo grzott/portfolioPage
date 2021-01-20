@@ -9,7 +9,8 @@ export const FormContainer = styled.form`
   display: flex;
   align-items: center;
   flex-direction: column;
-  transition: 0.9s ease;
+  transition: background-color 0.9s ease;
+  
 `
 
 export const Input = styled.input`

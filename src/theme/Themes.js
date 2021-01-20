@@ -15,11 +15,11 @@ export const darkTheme = {
         secondary: 'Poppins, sans-serif',
     },
     size: {
-        base: `${16}px`,
-        big: '2.85rem',
+        base: '16px', // rem for RWD
+        big: '2.5rem',
         medium: '1.5rem',
-        regular: '1.25rem',
-        small: '1rem',
+        regular: '1rem',
+        small: '0.75rem',
     },
     fontStyle: {
         black: '900',
@@ -44,10 +44,11 @@ export const lightTheme = {
         secondary: 'Poppins, sans-serif',
     },
     size: {
-        big: '45px',
-        medium: '24px',
-        regular: '20px',
-        small: '16px',
+        base: 1, // rem for RWD
+        big: '2.5rem',
+        medium: '1.5rem',
+        regular: '1rem',
+        small: '0.75rem',
     },
     fontStyle: {
         black: '900',

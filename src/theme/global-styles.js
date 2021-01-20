@@ -10,13 +10,13 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     scroll-behavior: smooth;
     font-family: ${({ theme }) => theme.font.primary};
-    font-size: 1.3vw;
+    font-size: ${({ theme }) => theme.size.base};
   }
   body {
     line-height: 1.5;
     letter-spacing: 0;
     background-color: ${({ theme }) => theme.backgroundColor.primary};
-    transition: 0.9s ease;
+    transition: background-color 0.9s ease;
   }
   .activeLang {
     color: ${({ theme }) => theme.color.focused};
