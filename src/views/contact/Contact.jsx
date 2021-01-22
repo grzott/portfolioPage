@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { withTheme } from "styled-components"
 import CustomTitle from "../../components/_shared/customTitle/CustomTitle"
 import { FormContainer, Input, Textarea, Button } from "./styles"
+import { Formik } from "formik"
 
 const Contact = ({ theme }) => {
   const [title, setTitle] = useState("")
@@ -13,13 +14,55 @@ const Contact = ({ theme }) => {
   }, [theme.lang])
 
   return (
-    <FormContainer>
-      <CustomTitle text={title} />
-      <Input type="text" name="name" placeholder={texts.name} />
-      <Input type="text" name="name" placeholder={texts.email} />
-      <Textarea placeholder={texts.msg} />
-      <Button>{texts.btn}</Button>
-    </FormContainer>
+    <Formik
+      initialValues={{ name: "", email: "", password: "" }}
+      validate={values => {
+        const errors = {}
+        if (!values.email) {
+          errors.email = "Required"
+        } else if (
+          !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+        ) {
+          errors.email = "Invalid email address"
+        }
+        return errors
+      }}
+      onSubmit={(values, { setSubmitting }) => {
+        setTimeout(() => {
+          alert(JSON.stringify(values, null, 2))
+          setSubmitting(false)
+        }, 400)
+      }}
+    >
+      {({
+        values,
+        errors,
+        touched,
+        handleChange,
+        handleBlur,
+        handleSubmit,
+        isSubmitting,
+        /* and other goodies */
+      }) => (
+        <FormContainer onSubmit={handleSubmit}>
+          <CustomTitle text={title} />
+          <Input type="name" name="name" placeholder={texts.name} />
+          <Input
+            type="email"
+            name="email"
+            onChange={handleChange}
+            onBlur={handleBlur}
+            value={values.email}
+            placeholder={texts.email}
+          />
+          {errors.email && touched.email && errors.email}
+          <Textarea placeholder={texts.msg} />
+          <Button type="submit" disabled={isSubmitting}>
+            {texts.btn}
+          </Button>
+        </FormContainer>
+      )}
+    </Formik>
   )
 }
 
