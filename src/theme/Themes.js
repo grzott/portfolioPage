@@ -4,7 +4,8 @@ export const darkTheme = {
     color: {
         primary: '#E8DFDA', // nearly white
         secondary: '#285D9E', // blue
-        focused: '#8FB99E' // light green
+        focused: '#8FB99E', // light green
+        error: 'red',
     },
     backgroundColor: {
         primary: '#303231', // gray
@@ -40,7 +41,8 @@ export const lightTheme = {
     color: {
         primary: '#252727', // dark gray
         secondary: '#285D9E', // blue
-        focused: '#8FB99E' // light green
+        focused: '#8FB99E', // light green
+        error: 'red',
     },
     backgroundColor: {
         primary: '#E8DFDA', // nearly white
@@ -103,6 +105,11 @@ export const pl = {
                 email: 'e-mail',
                 msg: 'wiadomość',
                 btn: 'Wyślij',
+                validation: {
+                    req: 'Pole wymagane',
+                    email: 'niepoprawny mail',
+                    msg: 'wiadomość jest za krótka',
+                },
             },
         },
         title: {
@@ -149,7 +156,12 @@ export const eng = {
                 name: 'name',
                 email: 'e-mail',
                 msg: 'message',
-                btn: 'Send'
+                btn: 'Send',
+                validation: {
+                    req: 'Field required',
+                    email: 'Invalid email address',
+                    msg: 'Message is too short',
+                },
             },
         },
         title: {
