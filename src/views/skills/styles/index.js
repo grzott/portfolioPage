@@ -2,9 +2,10 @@ import styled from "styled-components"
 import { isMobile } from "react-device-detect"
 
 export const GridContainer = styled.div`
-margin: 20px;
+  margin: 20px 0;
   display: ${isMobile ? 'flex' : 'grid'};
   flex-direction: column;
+  align-items: ${isMobile ? 'center' : ''};
   grid-template: 1fr 1fr 1fr 1fr 1fr / 1.5fr 1fr;
   grid-template-areas: 
     "title tools"
@@ -12,6 +13,10 @@ margin: 20px;
     "secondary tools"
     "tetriary tools"
     "quaternary tools";
-    column-gap: 100px;
-    justify-content: space-between;
+  &>h1 {
+      margin: ${isMobile ? '0' : '20px 0'};
+    }
+  &>p {
+      margin: ${isMobile ? '0' : '20px 0'};
+    }
 `

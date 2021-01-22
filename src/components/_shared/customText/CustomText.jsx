@@ -9,6 +9,7 @@ const Text = styled.p`
   font-weight: ${({ theme }) => theme.fontStyle.regular};
   grid-area: ${props => props.gridArea};
   padding: ${isMobile ? "20px 0" : ""};
+  align-self: flex-start;
 `
 
 const CustomText = ({ text, gridArea }) => {

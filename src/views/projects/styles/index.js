@@ -8,8 +8,8 @@ export const GridContainer = styled.div`
   grid-row-gap: 60px;
   justify-items: center;
   &>h1 {
-    margin-top: 100px;
-    justify-self: start;
+    justify-self: flex-start;
+    margin: ${isMobile ? '0' : '20px 0'};
   }
 `
 

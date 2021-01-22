@@ -11,14 +11,14 @@ import NextIcon from "../../../assets/svg/nextjs.svg"
 import GatsbyIcon from "../../../assets/svg/gatsbyjs.svg"
 import FigmaIcon from "../../../assets/svg/figma.svg"
 
-const ICONS_SIZE = 160
+const ICONS_SIZE = 150
 
 const GridContainer = styled.div`
   grid-area: tools;
   display: grid;
-  grid-template: ${isMobile ? "auto / 1fr 1fr" : "1fr 1fr 1fr / 1fr 1fr 1fr"};
-  grid-column-gap: 30px;
-  grid-row-gap: 30px;
+  grid-template: ${isMobile ? "auto / 1fr 1fr" : "auto / 1fr 1fr 1fr"};
+  margin: ${isMobile ? "30px 0 0 0" : ""};
+  grid-gap: 20px;
 `
 const icons = [
   "html",

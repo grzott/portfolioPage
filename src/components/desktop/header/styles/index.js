@@ -29,6 +29,11 @@ export const Nav = styled.nav`
     &:hover {
       color: ${({ theme }) => theme.color.focused};
     }
+    @media (max-width: 1200px) {
+      font-size: ${({ theme }) => theme.size.regular};
+      margin: 0 1em;
+    }
+    
   }
 `
 
