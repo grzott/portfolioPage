@@ -5,7 +5,7 @@ import CustomText from "../../components/_shared/customText/CustomText"
 import { GridContainer } from "./styles"
 import SkillsIconsContainer from "../../components/_shared/skillsIconsContainer/SkillsIconsContainer"
 
-const DesktopSkills = ({ theme }) => {
+const Skills = ({ theme }) => {
   const [title, setTitle] = useState("")
   const [texts, setTexts] = useState({})
 
@@ -26,4 +26,4 @@ const DesktopSkills = ({ theme }) => {
   )
 }
 
-export default withTheme(DesktopSkills)
+export default withTheme(Skills)

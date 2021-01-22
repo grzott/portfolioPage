@@ -13,8 +13,8 @@ export const Wrapper = styled.header`
 
 export const Nav = styled.nav`
   padding: 40px 0 0 0;
-  width: 75vw;
-  height: 80vh;
+  width: 70vw;
+  height: 75vh;
   color: ${({ theme }) => theme.color.primary};
   background-color: ${({ theme }) => theme.backgroundColor.opacity};
   transition: 0.9s ease;

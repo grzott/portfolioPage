@@ -9,7 +9,7 @@ export const darkTheme = {
     backgroundColor: {
         primary: '#303231', // gray
         secondary: '#252727', // dark gray
-        opacity: 'rgba(48, 50, 49, 0.5)' // gray x 0.5 opacity
+        opacity: 'rgba(48, 50, 49, 0.7)' // gray x 0.5 opacity
 
     },
     font: {
@@ -45,7 +45,7 @@ export const lightTheme = {
     backgroundColor: {
         primary: '#E8DFDA', // nearly white
         secondary: '#979898', // gray
-        opacity: 'rgba(232, 222, 218, 0.5)' // nearly white x0.5 opacity
+        opacity: 'rgba(232, 222, 218, 0.85)' // nearly white x0.5 opacity
     },
     font: {
         primary: 'Roboto, sans-serif',
@@ -55,7 +55,7 @@ export const lightTheme = {
         base: '16px', // rem for RWD
         big: '2.5rem',
         medium: '1.5rem',
-        regular: '1rem',
+        regular: '1.25rem',
         small: '0.75rem',
     },
     mSize: {

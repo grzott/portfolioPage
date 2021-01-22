@@ -3,7 +3,7 @@ import { withTheme } from "styled-components"
 import CustomTitle from "../../components/_shared/customTitle/CustomTitle"
 import { FormContainer, Input, Textarea, Button } from "./styles"
 
-const DesktopContact = ({ theme }) => {
+const Contact = ({ theme }) => {
   const [title, setTitle] = useState("")
   const [texts, setTexts] = useState({})
 
@@ -23,4 +23,4 @@ const DesktopContact = ({ theme }) => {
   )
 }
 
-export default withTheme(DesktopContact)
+export default withTheme(Contact)

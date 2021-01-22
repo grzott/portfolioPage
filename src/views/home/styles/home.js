@@ -2,7 +2,6 @@ import styled from "styled-components"
 import { isMobile } from "react-device-detect"
 
 export const HomeContainer = styled.div`
-width: 80vw;
 height: 80vh;
 display: flex;
 justify-content: center;
@@ -17,7 +16,7 @@ export const Title = styled.h1`
   text-align: center;
   pointer-events: none;
   transition: color 0.9s ease;
-  transform: ${isMobile ? 'rotate(270deg) translate(0, 10%)' : ''};
+  transform: ${isMobile ? 'rotate(270deg) translate(0, 0)' : ''};
 `
 
 export const Text = styled.p`

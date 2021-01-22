@@ -32,12 +32,12 @@ const projects = [
 ]
 
 const Project = withTheme(({ title, link, linkGitlab, imgSrc }) => {
-  const [isShown, setIsShown] = useState(false)
+  const [isShown, setShown] = useState(false)
 
   return (
     <ProjectContainer
-      onMouseEnter={() => setIsShown(true)}
-      onMouseLeave={() => setIsShown(false)}
+      onMouseEnter={() => setShown(true)}
+      onMouseLeave={() => setShown(false)}
     >
       <ProjectTitle display={isShown ? "flex" : "none"}>{title}</ProjectTitle>
       <ProjectLinks display={isShown ? "flex" : "none"}>
@@ -62,7 +62,7 @@ const Project = withTheme(({ title, link, linkGitlab, imgSrc }) => {
   )
 })
 
-const DesktopProjects = ({ theme }) => {
+const Projects = ({ theme }) => {
   const [title, setTitle] = useState("")
 
   useEffect(() => {
@@ -85,4 +85,4 @@ const DesktopProjects = ({ theme }) => {
   )
 }
 
-export default withTheme(DesktopProjects)
+export default withTheme(Projects)

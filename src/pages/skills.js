@@ -1,13 +1,10 @@
 import React from "react"
-import { isMobile } from "react-device-detect"
-import DesktopSkills from "../views/skills/DesktopSkills"
-import MobileSkills from "../views/skills/MobileSkills"
+import Skills from "../views/skills/Skills"
+
 
 const SkillsPage = () => {
-  if (isMobile) {
-    return <MobileSkills />
-  }
-  return <DesktopSkills />
+ 
+  return <Skills />
 }
 
 export default SkillsPage
