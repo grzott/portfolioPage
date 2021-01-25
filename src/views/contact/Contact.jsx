@@ -11,6 +11,8 @@ import {
 import { Formik } from "formik"
 import ValidationMsg from "./ValidationMsg"
 import { isMobile } from "react-device-detect"
+import emailjs, { init } from "emailjs-com"
+init("user_hRX02xbh5wyUiZk86P87H")
 
 const Contact = ({ theme }) => {
   const [title, setTitle] = useState("")
@@ -22,6 +24,11 @@ const Contact = ({ theme }) => {
     setTexts(theme.lang.text.contact)
     setErrorMsg(theme.lang.text.contact.validation)
   }, [theme.lang])
+
+  const handleSubmit = e => {
+    e.preventDefault()
+    handleSubmit()
+  }
 
   return (
     <Formik
@@ -46,10 +53,25 @@ const Contact = ({ theme }) => {
         return errors
       }}
       onSubmit={(values, { setSubmitting }) => {
-        setTimeout(() => {
-          alert(JSON.stringify(values, null, 2))
-          setSubmitting(false)
-        }, 400)
+        setSubmitting(true)
+        console.log("ok")
+        console.log("values: ", values)
+        emailjs
+          .sendForm(
+            "contact_service",
+            "contact_form",
+            values,
+            "user_hRX02xbh5wyUiZk86P87H"
+          )
+          .then(
+            result => {
+              console.log(result.text)
+            },
+            error => {
+              console.log(error.text)
+            }
+          )
+        setSubmitting(false)
       }}
     >
       {({
@@ -103,7 +125,7 @@ const Contact = ({ theme }) => {
               <ValidationMsg>{errors.message}</ValidationMsg>
             )}
           </ElementContainer>
-          <Button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting} onClick={handleSubmit}>
             {texts.btn}
           </Button>
         </FormContainer>
