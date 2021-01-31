@@ -29,7 +29,7 @@ const Header = ({ theme }) => {
         payload: true,
       })
     }
-  }, [toggleTheme])
+  }, [toggleTheme, dispatch])
 
   useEffect(() => {
     if (toggleLang) {
@@ -43,7 +43,7 @@ const Header = ({ theme }) => {
         payload: true,
       })
     }
-  }, [toggleLang, actions])
+  }, [toggleLang, dispatch])
 
   const NavLink = ({ children, to, activeStyle }) => (
     <Link to={to} activeStyle={activeStyle}>

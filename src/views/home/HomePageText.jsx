@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { withTheme } from "styled-components"
-import { Positioner, Text, TextHighlighted } from "./styles/home"
+import { Text, TextHighlighted } from "./styles/home"
 
 const HomePageText = ({ theme }) => {
   const [texts, setTexts] = useState({})

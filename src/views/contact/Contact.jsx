@@ -28,14 +28,6 @@ const Contact = ({ theme }) => {
     setErrorMsg(theme.lang.text.contact.validation)
   }, [theme.lang])
 
-  const handleSubmit = e => {
-    e.preventDefault()
-    handleSubmit()
-
-
-
-  }
-
   return (
     <Formik
       initialValues={{ name: "", email: "", message: "" }}
@@ -83,8 +75,7 @@ const Contact = ({ theme }) => {
                 setError(false)
               }, 2000)
             }
-          )
-        
+          )  
       }}
     >
       {({

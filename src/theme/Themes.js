@@ -1,5 +1,3 @@
-import { isMobile } from "react-device-detect"
-
 export const darkTheme = {
     color: {
         primary: '#E8DFDA', // nearly white
@@ -88,16 +86,16 @@ export const pl = {
                 secondary: 'Developer',
             },
             aboutme: {
-                primary: 'I am contantly learning, exploring and eperimenting web developer. Open to new ideas and innovate solutios od problems.',
-                secondary: 'Well organized, open minded, teamplayer with desire to explore and breake barriers. A fan of healthy life, gym, music, cinema and video game lover. ',
-                tetriary: ' Interested in the entire frontned spectrum as well as explore and earn backend world.',
+                primary: 'Ciągle się uczę, odkrywam i eksperymentuje jako programista. Jestem otwary na nowe pomysły oraz innowacyjne rozwiązania problemów.',
+                secondary: 'Jestem dobrze zorganizowany, mam otwary umysł, lubię pracę zespołową, z chęcią odkrywam i przełamuje moje bariery. Jestem również miłośnikiem zdrowego stylu życia, siłowni, muzyki, kina i gier wideo. ',
+                tetriary: ' Interesuje mnie całe spektrum frontendu, a także eksploracja świata backendu.',
                 quaternary: 'Sprawdź mój profil na LinkedIn oraz Gitlab:',
             },
             skills: {
-                primary: 'Frontend developer with exprince building responsives websites, web apications and mobile apps.',
-                secondary: 'I specialize in JavaScript (TypeScript) and have exprience with React.js (Next.js, Gatsby.js). On the client side I am proficjent in HTML, CSS, SASS. I also using React Native in my daily work.',
-                tetriary: 'My development is reinforced by basic knowledge of software version control system Git.',
-                quaternary: 'I use Figma also to create the graphic design of the pages',
+                primary: 'Jestem programista frontendowy z doświadczeniem w tworzeniu responsywnych stron internetowych, aplikacji internetowych i aplikacji mobilnych.',
+                secondary: 'Specjalizuję się w JavaScript (TypeScript) i mam doświadczenie z React.js (Next.js, Gatsby.js). Biegle posługuję się HTML, CSS, SASS. Korzystam również z React Native w mojej codziennej pracy.',
+                tetriary: 'Mój rozwój jest wzmocniony podstawową znajomością systemu kontroli wersji oprogramowania Git. Uczę się również języka Kotlin aby poszerzyć swoją wiedzę w temacie aplikacji mobilnych.',
+                quaternary: 'W codziennej pracy wykorzystuję Figmę do tworzenia projektów graficznych stron',
             },
             projects: '',
             contact: {
@@ -143,15 +141,15 @@ export const eng = {
             },
             aboutme: {
                 primary: 'I am contantly learning, exploring and eperimenting web developer. Open to new ideas and innovate solutios od problems.',
-                secondary: 'Well organized, open minded, teamplayer with desire to explore and breake barriers. A fan of healthy life, gym, music, cinema and video game lover. ',
-                tetriary: ' Interested in the entire frontned spectrum as well as explore and earn backend world.',
+                secondary: 'I am well organized, I have an open mind, I like teamwork, I am eager to discover and break my barriers. I am also a lover of a healthy lifestyle, gym, music, cinema and video games.',
+                tetriary: 'Im Interested in the entire frontned spectrum as well as explore backend world',
                 quaternary: 'Check out my LinkedIn and gitlab profile:',
             },
             skills: {
                 primary: 'Frontend developer with exprince building responsives websites, web apications and mobile apps.',
-                secondary: 'I specialize in JavaScript (TypeScript) and have exprience with React.js (Next.js, Gatsby.js). On the client side I am proficjent in HTML, CSS, SASS. I also using React Native in my daily work.',
-                tetriary: 'My development is reinforced by basic knowledge of software version control system Git.',
-                quaternary: 'I use Figma also to create the graphic design of the pages',
+                secondary: 'I specialize in JavaScript (TypeScript) and have experience with React.js (Next.js, Gatsby.js). I am fluent in HTML, CSS and SASS. I also use React Native in my daily work.',
+                tetriary: 'My development is enhanced by the basic understanding of Gits version control system. I am also learning Kotlin to expand my knowledge of mobile applications.',
+                quaternary: 'In my daily work I use Figma to create graphic designs for websites',
             },
             projects: '',
             contact: {
@@ -180,3 +178,113 @@ export const eng = {
         },
     },
 }
+
+// BAZOWA WERSJA !!!!!
+
+// export const pl = {
+//     lang: {
+//         nav: {
+//             home: 'Strona Główna',
+//             aboutme: 'O mnie',
+//             skills: 'Umiejęstności',
+//             projects: 'Projekty',
+//             contact: 'Kontakt',
+//         },
+//         text: {
+//             home: {
+//                 primary: 'Jestem Grzesiek, Front-End ',
+//                 secondary: 'Developer',
+//             },
+//             aboutme: {
+//                 primary: 'I am contantly learning, exploring and eperimenting web developer. Open to new ideas and innovate solutios od problems.',
+//                 secondary: 'Well organized, open minded, teamplayer with desire to explore and breake barriers. A fan of healthy life, gym, music, cinema and video game lover. ',
+//                 tetriary: ' Interested in the entire frontned spectrum as well as explore and earn backend world.',
+//                 quaternary: 'Sprawdź mój profil na LinkedIn oraz Gitlab:',
+//             },
+//             skills: {
+//                 primary: 'Frontend developer with exprince building responsives websites, web apications and mobile apps.',
+//                 secondary: 'I specialize in JavaScript (TypeScript) and have exprience with React.js (Next.js, Gatsby.js). On the client side I am proficjent in HTML, CSS, SASS. I also using React Native in my daily work.',
+//                 tetriary: 'My development is reinforced by basic knowledge of software version control system Git.',
+//                 quaternary: 'I use Figma also to create the graphic design of the pages',
+//             },
+//             projects: '',
+//             contact: {
+//                 name: 'imię',
+//                 email: 'e-mail',
+//                 msg: 'wiadomość',
+//                 btn: 'Wyślij',
+//                 validation: {
+//                     req: 'Pole wymagane',
+//                     email: 'niepoprawny e-mail',
+//                     msg: 'wiadomość jest za krótka',
+//                     success: 'Wiadomość wysłana',
+//                     error: 'Przepraszam, coś poszło nie tak. Spróbuj ponownie'
+//                 },
+//             },
+//         },
+//         title: {
+//             home: 'Hello',
+//             aboutme: 'O mnie',
+//             skills: 'Umiejęstności',
+//             projects: 'Projekty',
+//             contact: 'Kontakt',
+//         },
+//         footer: {
+//             text: 'Grzegorz Otto © 2020 All Rights Reserved',
+//         },
+//     },
+// }
+
+// export const eng = {
+//     lang: {
+//         nav: {
+//             home: 'Home',
+//             aboutme: 'About Me',
+//             skills: 'Skills',
+//             projects: 'Projects',
+//             contact: 'Contact',
+//         },
+//         text: {
+//             home: {
+//                 primary: 'Im Grzesiek, Front-End ',
+//                 secondary: 'Developer',
+//             },
+//             aboutme: {
+//                 primary: 'I am contantly learning, exploring and eperimenting web developer. Open to new ideas and innovate solutios od problems.',
+//                 secondary: 'Well organized, open minded, teamplayer with desire to explore and breake barriers. A fan of healthy life, gym, music, cinema and video game lover. ',
+//                 tetriary: ' Interested in the entire frontned spectrum as well as explore and earn backend world.',
+//                 quaternary: 'Check out my LinkedIn and gitlab profile:',
+//             },
+//             skills: {
+//                 primary: 'Frontend developer with exprince building responsives websites, web apications and mobile apps.',
+//                 secondary: 'I specialize in JavaScript (TypeScript) and have exprience with React.js (Next.js, Gatsby.js). On the client side I am proficjent in HTML, CSS, SASS. I also using React Native in my daily work.',
+//                 tetriary: 'My development is reinforced by basic knowledge of software version control system Git.',
+//                 quaternary: 'I use Figma also to create the graphic design of the pages',
+//             },
+//             projects: '',
+//             contact: {
+//                 name: 'name',
+//                 email: 'e-mail',
+//                 msg: 'message',
+//                 btn: 'Send',
+//                 validation: {
+//                     req: 'Field required',
+//                     email: 'Invalid email address',
+//                     msg: 'Message is too short',
+//                     success: 'Messasge sent',
+//                     error: 'Sorry, something goes wrong. Try again.'
+//                 },
+//             },
+//         },
+//         title: {
+//             home: 'Hello',
+//             aboutme: 'About Me',
+//             skills: 'Skills',
+//             projects: 'Projects',
+//             contact: 'Contact',
+//         },
+//         footer: {
+//             text: 'Grzegorz Otto © 2020 All Rights Reserved',
+//         },
+//     },
+// }

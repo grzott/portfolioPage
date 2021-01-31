@@ -19,13 +19,10 @@ const iconSwitcher = (name) => {
     switch (name) {
         case 'gitlab':
             return <GithubIcon />
-            break;
         case 'linkedin':
             return <LinkedInIcon />
-            break;
         case 'link':
             return <LIcon />
-            break;
         default:
             break;
     }

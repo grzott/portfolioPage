@@ -48,31 +48,22 @@ const iconSwitcher = icon => {
   switch (icon) {
     case "gatsbyjs":
       return <GatsbyIcon />
-      break
     case "js":
       return <JsIcon />
-      break
     case "ts":
       return <TsIcon />
-      break
     case "html":
       return <HtmlIcon />
-      break
     case "css":
       return <CssIcon />
-      break
     case "sass":
       return <SassIcon />
-      break
     case "next":
       return <NextIcon />
-      break
     case "figma":
       return <FigmaIcon />
-      break
     case "rIcon":
       return <RIcon />
-      break
     default:
       break
   }
