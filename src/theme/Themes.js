@@ -91,7 +91,7 @@ export const pl = {
                 primary: 'I am contantly learning, exploring and eperimenting web developer. Open to new ideas and innovate solutios od problems.',
                 secondary: 'Well organized, open minded, teamplayer with desire to explore and breake barriers. A fan of healthy life, gym, music, cinema and video game lover. ',
                 tetriary: ' Interested in the entire frontned spectrum as well as explore and earn backend world.',
-                quaternary: 'Check out my LinkedIn and gitlab profile:',
+                quaternary: 'Sprawdź mój profil na LinkedIn oraz Gitlab:',
             },
             skills: {
                 primary: 'Frontend developer with exprince building responsives websites, web apications and mobile apps.',
@@ -107,13 +107,15 @@ export const pl = {
                 btn: 'Wyślij',
                 validation: {
                     req: 'Pole wymagane',
-                    email: 'niepoprawny mail',
+                    email: 'niepoprawny e-mail',
                     msg: 'wiadomość jest za krótka',
+                    success: 'Wiadomość wysłana',
+                    error: 'Przepraszam, coś poszło nie tak. Spróbuj ponownie'
                 },
             },
         },
         title: {
-            home: 'Cześć',
+            home: 'Hello',
             aboutme: 'O mnie',
             skills: 'Umiejęstności',
             projects: 'Projekty',
@@ -161,6 +163,8 @@ export const eng = {
                     req: 'Field required',
                     email: 'Invalid email address',
                     msg: 'Message is too short',
+                    success: 'Messasge sent',
+                    error: 'Sorry, something goes wrong. Try again.'
                 },
             },
         },

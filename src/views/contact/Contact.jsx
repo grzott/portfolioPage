@@ -7,6 +7,7 @@ import {
   Textarea,
   Button,
   ElementContainer,
+  EndMsg,
 } from "./styles"
 import { Formik } from "formik"
 import ValidationMsg from "./ValidationMsg"
@@ -18,6 +19,8 @@ const Contact = ({ theme }) => {
   const [title, setTitle] = useState("")
   const [texts, setTexts] = useState({})
   const [errorMsg, setErrorMsg] = useState({})
+  const [isSuccess, setSuccess] = useState(false)
+  const [isError, setError] = useState(false)
 
   useEffect(() => {
     setTitle(theme.lang.title.contact)
@@ -28,6 +31,9 @@ const Contact = ({ theme }) => {
   const handleSubmit = e => {
     e.preventDefault()
     handleSubmit()
+
+
+
   }
 
   return (
@@ -52,26 +58,33 @@ const Contact = ({ theme }) => {
         }
         return errors
       }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, { setSubmitting, resetForm }) => {
         setSubmitting(true)
-        console.log("ok")
-        console.log("values: ", values)
         emailjs
-          .sendForm(
+          .send(
             "contact_service",
             "contact_form",
             values,
-            "user_hRX02xbh5wyUiZk86P87H"
           )
           .then(
-            result => {
-              console.log(result.text)
+           (res) => {
+              setSuccess(true)
+              setTimeout(() => {
+                resetForm();
+                setSubmitting(false)
+                setSuccess(false)
+              }, 2000)
             },
-            error => {
-              console.log(error.text)
+            (error) => {
+              setError(true)
+              setTimeout(() => {
+                resetForm();
+                setSubmitting(false)
+                setError(false)
+              }, 2000)
             }
           )
-        setSubmitting(false)
+        
       }}
     >
       {({
@@ -128,6 +141,12 @@ const Contact = ({ theme }) => {
           <Button type="submit" disabled={isSubmitting} onClick={handleSubmit}>
             {texts.btn}
           </Button>
+          {
+            isSuccess && <EndMsg color={theme.color.focus}>{errorMsg.success}</EndMsg>
+          }
+          {
+            isError && <EndMsg color={theme.color.error}>{errorMsg.error}</EndMsg>
+          }
         </FormContainer>
       )}
     </Formik>

@@ -82,3 +82,14 @@ export const ValidationMsgContainer = styled.p`
   // padding: 15px 0;
   letter-spacing: 0.075em;
 `
+
+export const EndMsg = styled.span`
+margin: 30px 0 0 0;
+height: 30px;
+color: ${({ theme }) => theme.color.focused};
+font-family: ${({ theme }) => theme.font.secondary};
+font-size: ${({ theme }) => theme.size.regular};
+font-weight: ${({ theme }) => theme.fontStyle.regular};
+// padding: 15px 0;
+letter-spacing: 0.075em;
+`
