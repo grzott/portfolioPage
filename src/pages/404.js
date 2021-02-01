@@ -1,7 +1,8 @@
 import React from "react"
+import NotFound from "./../views/notFound/NotFound"
 
-const ErrorPage = () => {
-    return <div>404 !!</div>
-}
+const NotFoundPage = () => {
+    return <NotFound />
+} 
 
-export default ErrorPage
+export default NotFoundPage

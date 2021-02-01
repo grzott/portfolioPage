@@ -122,6 +122,9 @@ export const pl = {
         footer: {
             text: 'Grzegorz Otto © 2020 All Rights Reserved',
         },
+        notFound: {
+            text: 'Strona nie znaleziona'
+        }
     },
 }
 
@@ -176,6 +179,9 @@ export const eng = {
         footer: {
             text: 'Grzegorz Otto © 2020 All Rights Reserved',
         },
+        notFound: {
+            text: 'Page not found'
+        }
     },
 }
 
