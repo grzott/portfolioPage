@@ -7,7 +7,7 @@ const NotFound = ({ theme }) => {
 const [text, setText] = useState('')
 
 useEffect(() => {
-    setText(theme.lang.notFound.text)
+    setText(theme.notFound.text)
   }, [theme])
 
   return (

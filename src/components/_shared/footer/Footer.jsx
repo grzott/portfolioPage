@@ -25,7 +25,7 @@ const Container = styled.div`
 const Footer = ({ theme }) => {
   return (
     <Container>
-      <Text>{theme.lang.footer.text}</Text>
+      <Text>{theme.footer.text}</Text>
     </Container>
   )
 }

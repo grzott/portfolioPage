@@ -66,7 +66,7 @@ const Projects = ({ theme }) => {
   const [title, setTitle] = useState("")
 
   useEffect(() => {
-    setTitle(theme.lang.title.projects)
+    setTitle(theme.title.projects)
   }, [theme])
 
   return (

@@ -6,7 +6,7 @@ const HomePageText = ({ theme }) => {
   const [texts, setTexts] = useState({})
 
   useEffect(() => {
-    setTexts(theme.lang.text.home)
+    setTexts(theme.text.home)
   }, [theme])
 
   return (

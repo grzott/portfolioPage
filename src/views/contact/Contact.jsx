@@ -23,10 +23,10 @@ const Contact = ({ theme }) => {
   const [isError, setError] = useState(false)
 
   useEffect(() => {
-    setTitle(theme.lang.title.contact)
-    setTexts(theme.lang.text.contact)
-    setErrorMsg(theme.lang.text.contact.validation)
-  }, [theme.lang])
+    setTitle(theme.title.contact)
+    setTexts(theme.text.contact)
+    setErrorMsg(theme.text.contact.validation)
+  }, [theme])
 
   return (
     <Formik

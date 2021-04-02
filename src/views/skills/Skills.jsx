@@ -10,8 +10,8 @@ const Skills = ({ theme }) => {
   const [texts, setTexts] = useState({})
 
   useEffect(() => {
-    setTitle(theme.lang.title.skills)
-    setTexts(theme.lang.text.skills)
+    setTitle(theme.title.skills)
+    setTexts(theme.text.skills)
   }, [theme])
 
   return (

@@ -14,7 +14,7 @@ const Header = ({ theme }) => {
   const [titles, setTitles] = useState({})
 
   useEffect(() => {
-    setTitles(theme.lang.nav)
+    setTitles(theme.nav)
   }, [theme])
 
   useEffect(() => {

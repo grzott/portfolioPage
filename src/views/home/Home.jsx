@@ -8,7 +8,7 @@ const Home = ({ theme }) => {
   const [title, setTitle] = useState('')
 
   useEffect(() => {
-    setTitle(theme.lang.title.home)
+    setTitle(theme.title.home)
   }, [theme])
 
   return (

@@ -11,8 +11,8 @@ const AboutMe = ({ theme }) => {
   const [texts, setTexts] = useState({})
 
   useEffect(() => {
-    setTitle(theme.lang.title.aboutme)
-    setTexts(theme.lang.text.aboutme)
+    setTitle(theme.title.aboutme)
+    setTexts(theme.text.aboutme)
   }, [theme])
 
   return (

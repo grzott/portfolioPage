@@ -72,7 +72,6 @@ export const lightTheme = {
 }
 
 export const pl = {
-    lang: {
         nav: {
             home: 'Strona Główna',
             aboutme: 'O mnie',
@@ -125,11 +124,10 @@ export const pl = {
         notFound: {
             text: 'Strona nie znaleziona'
         }
-    },
 }
 
 export const eng = {
-    lang: {
+    
         nav: {
             home: 'Home',
             aboutme: 'About Me',
@@ -182,7 +180,6 @@ export const eng = {
         notFound: {
             text: 'Page not found'
         }
-    },
 }
 
 // BAZOWA WERSJA !!!!!

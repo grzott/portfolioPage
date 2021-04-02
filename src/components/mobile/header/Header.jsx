@@ -15,11 +15,7 @@ const Header = ({ theme }) => {
   const [isWrapped, setWrapped] = useState(true)
 
   useEffect(() => {
-    console.log(isWrapped)
-  }, [isWrapped])
-
-  useEffect(() => {
-    setTitles(theme.lang.nav)
+    setTitles(theme.nav)
   }, [theme])
 
   useEffect(() => {
