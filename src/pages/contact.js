@@ -1,7 +1,8 @@
 import React from "react"
+import Contact from "../views/contact/Contact"
 
 const ContactPage = () => {
-  return <div>About Me</div>
+  return <Contact />
 }
 
 export default ContactPage

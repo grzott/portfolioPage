@@ -1,7 +1,8 @@
 import React from "react"
+import Projects from "../views/projects/Projects"
 
 const ProjectsPage = () => {
-  return <div>About Me</div>
+  return <Projects />
 }
 
 export default ProjectsPage

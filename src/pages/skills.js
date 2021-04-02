@@ -1,7 +1,10 @@
 import React from "react"
+import Skills from "../views/skills/Skills"
+
 
 const SkillsPage = () => {
-  return <div>About Me</div>
+ 
+  return <Skills />
 }
 
 export default SkillsPage

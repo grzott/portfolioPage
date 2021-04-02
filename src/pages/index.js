@@ -1,13 +1,9 @@
 import React from "react"
-import { isMobile } from "react-device-detect"
-import DesktopHome from "../views/home/DesktopHome"
-import MobileHome from "../views/home/MobileHome"
+import Home from "../views/home/Home"
+
 
 const IndexPage = () => {
-  if (isMobile) {
-    return <MobileHome />
-  }
-  return <DesktopHome />
+  return <Home />
 }
 
 export default IndexPage

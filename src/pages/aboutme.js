@@ -1,7 +1,8 @@
 import React from "react"
+import AboutMe from "../views/aboutme/AboutMe"
 
 const AboutMePage = () => {
-  return <div>About Me</div>
+  return <AboutMe />
 }
 
 export default AboutMePage
