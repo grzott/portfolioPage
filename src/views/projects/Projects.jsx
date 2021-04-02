@@ -13,8 +13,8 @@ import LinkIcon from "../../components/_shared/linkIcon/LinkIcon"
 const projects = [
   {
     title: "Portfolio",
-    link: "https://gitlab.com/grzott/go-portfolio",
-    linkGitlab: "https://gitlab.com/grzott/go-portfolio",
+    link: "https://github.com/grzott/portfolioPage",
+    linkGitlab: "https://github.com/grzott/portfolioPage",
     imgSrc: "/p1.png",
   },
   {
