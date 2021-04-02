@@ -1,0 +1,20 @@
+[
+    {
+      "title": "Portfolio",
+      "link": "https://github.com/grzott/portfolioPage",
+      "linkGitlab": "https://github.com/grzott/portfolioPage",
+      "imgSrc": "/p1.png"
+    },
+    {
+      "title": "Aplikacja Polskie Radio Kierowców",
+      "link":
+        "https://play.google.com/store/apps/details?id=com.pl_radiokierowcow_mobile&hl=pl&gl=US",
+      "imgSrc": "/p2.png"
+    },
+    {
+      "title": "Aplikacja Polskie Radio",
+      "link":
+        "https://play.google.com/store/apps/details?id=pl.polskieradio.mobile&hl=pl&gl=US",
+      "imgSrc": "/p3.png"
+    }
+  ]
