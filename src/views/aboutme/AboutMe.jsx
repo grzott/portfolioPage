@@ -31,7 +31,7 @@ const AboutMe = ({ theme }) => {
         <LinkIcon
           size={"60px"}
           name={"gitlab"}
-          link={"https://gitlab.com/grzott"}
+          link={"https://github.com/grzott"}
         />
       </IconContainer>
       <Image gridArea={"img"} />

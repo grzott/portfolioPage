@@ -9,6 +9,13 @@ const path = require('path');
 
 
 module.exports = {
+  siteMetadata: {
+    title: "Grzegorz Otto portfolio",
+    description:
+      "Grzegorz Otto frontend and mobile apps Developer.",
+    image: "/me.png", // Path to your image you placed in the 'static' folder
+    author: "Grzegorz Otto",
+  },
   plugins: [
     `gatsby-plugin-styled-components`,
     {
