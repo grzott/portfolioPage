@@ -66,19 +66,12 @@ const Projects = ({ theme }) => {
     fetchProjectsData();
   }, [])
 
-  useEffect(() => {
-    console.log('projects2',projects)
-    console.log('status', projectsResponse.status)
-    console.log('res', projectsResponse.response)
-  }, [projectsResponse.response])
-
   //set projects
   useEffect(() => {
     let checkAgain: any = 0;
     if (projectsResponse.status === status.REJECT) {
       checkAgain = setTimeout(() => {
         fetchProjectsData();
-        console.log('fetching')
       }, 15000);
     }
 
@@ -92,19 +85,19 @@ const Projects = ({ theme }) => {
     return () => {
       if (checkAgain) {
         clearTimeout(checkAgain);
-        // cancelProjectsFetch();
+        // cancelProjectsFetch(); 
       }
     };
   }, [projectsResponse]);
 
   if (projectsResponse.status === status.REJECT) {
     return (
-    <RespContainer>
-      <CustomText 
-        text={'Ups coś poszło nie tak'} 
-        gridArea={null}
-      />;
-    </RespContainer>
+      <RespContainer>
+        <CustomText 
+          text={'Ups coś poszło nie tak'} 
+          gridArea={null}
+        />;
+      </RespContainer>
     )
   }
 
