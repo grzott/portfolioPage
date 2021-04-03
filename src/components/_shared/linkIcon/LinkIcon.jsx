@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { withTheme } from "styled-components"
-import LinkedInIcon from '../../../assets/svg/linkedIn.svg'
+import LinkedInIcon from '../../../assets/svg/linkedin.svg'
 import GithubIcon from '../../../assets/svg/github.svg'
 import LIcon from '../../../assets/svg/link.svg'
 
