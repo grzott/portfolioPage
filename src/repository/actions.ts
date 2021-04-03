@@ -6,10 +6,10 @@ export enum status {
   
 
 export const fetchProjects = (setStatus : Function) => {
-    const controller = new AbortController();
-    const signal = controller.signal;
+    // const controller = new AbortController();
+    // const signal = controller.signal;
     const fetchProjectsData = () =>
-      fetch(`https://grzott.github.io/portfolioPage/src/data/projects.json`, {signal})
+      fetch(`https://grzott.github.io/portfolioPage/src/data/projects.json`)
         .then((res) => {
           setStatus({status: status.PENDING, response: null});
           if (!res.ok) {
@@ -23,7 +23,7 @@ export const fetchProjects = (setStatus : Function) => {
             setStatus({status: status.REJECT, response: null});
             return;
           }
-          setStatus({status: status.RESOLVE, response: res.items});
+          setStatus({status: status.RESOLVE, response: res.projects});
           return;
         })
         .catch((err) => {
@@ -31,6 +31,6 @@ export const fetchProjects = (setStatus : Function) => {
           return;
         });
   
-    const cancelProjectsFetch = () => controller.abort();
-    return {fetchProjectsData, cancelProjectsFetch};
+    // const cancelProjectsFetch = () => controller.abort();
+    return {fetchProjectsData};
   };

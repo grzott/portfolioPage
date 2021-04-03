@@ -2,7 +2,7 @@ export interface IProjects {
   header: string;
   title: string;
   link: string;
-  lingGithub: string;
+  lingGithub?: string;
   imgScr: string;
 }
 

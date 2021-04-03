@@ -74,7 +74,7 @@ const Projects = ({ theme }) => {
   }>({status: status.PENDING, response: null}
     );
   const [projects2, setProjects2] = useState(null);
-  const {fetchProjectsData, cancelProjectsFetch} = fetchProjects(
+  const {fetchProjectsData} = fetchProjects(
     setProjectsResponse,
   );
   
@@ -84,23 +84,21 @@ const Projects = ({ theme }) => {
 
   useEffect(() => {
     fetchProjectsData();
-    return () => {
-      cancelProjectsFetch();
-    };
   }, [])
 
   useEffect(() => {
     console.log('projects2',projects2)
     console.log('status', projectsResponse.status)
     console.log('res', projectsResponse.response)
-  }, [projects2])
+  }, [projectsResponse.response])
 
   //set projects
   useEffect(() => {
-    let checkAgain: number = 0;
+    let checkAgain: any = 0;
     if (projectsResponse.status === status.REJECT) {
       checkAgain = setTimeout(() => {
         fetchProjectsData();
+        console.log('fetching')
       }, 15000);
     }
 
@@ -114,7 +112,7 @@ const Projects = ({ theme }) => {
     return () => {
       if (checkAgain) {
         clearTimeout(checkAgain);
-        cancelProjectsFetch();
+        // cancelProjectsFetch();
       }
     };
   }, [projectsResponse]);
