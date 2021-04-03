@@ -30,7 +30,7 @@ const iconSwitcher = (name) => {
 
 const LinkIcon = ({ theme, name, link, size }) => {
     return (
-        <LinkIconContainer href={link} size={size}>
+        <LinkIconContainer href={link} size={size} target={'blank'}>
             {iconSwitcher(name)}
         </LinkIconContainer>
     )
