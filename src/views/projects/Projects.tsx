@@ -7,33 +7,13 @@ import {
   Img,
   ProjectTitle,
   ProjectLinks,
+  RespContainer,
 } from "./styles"
 import LinkIcon from "../../components/_shared/linkIcon/LinkIcon"
 import  { fetchProjects, status }  from '../../repository/actions'
 import CustomText from "../../components/_shared/customText/CustomText"
 import { IProjects } from "../../.."
-
-
-const projects = [
-  {
-    title: "Portfolio",
-    link: "https://github.com/grzott/portfolioPage",
-    linkGitlab: "https://github.com/grzott/portfolioPage",
-    imgSrc: "https://i.postimg.cc/HWJgRDMj/p1.png",
-  },
-  {
-    title: "Aplikacja Polskie Radio Kierowców",
-    link:
-      "https://play.google.com/store/apps/details?id=com.pl_radiokierowcow_mobile&hl=pl&gl=US",
-    imgSrc: "/p2.png",
-  },
-  {
-    title: "Aplikacja Polskie Radio",
-    link:
-      "https://play.google.com/store/apps/details?id=pl.polskieradio.mobile&hl=pl&gl=US",
-    imgSrc: "/p3.png",
-  },
-]
+import Loader from "react-loader-spinner";
 
 const Project = withTheme(({ title, link, linkGitlab, imgSrc }) => {
   const [isShown, setShown] = useState(false)
@@ -73,7 +53,7 @@ const Projects = ({ theme }) => {
     response: Array<IProjects> | null,
   }>({status: status.PENDING, response: null}
     );
-  const [projects2, setProjects2] = useState(null);
+  const [projects, setProjects] = useState<Array<IProjects> | null>(null);
   const {fetchProjectsData} = fetchProjects(
     setProjectsResponse,
   );
@@ -87,7 +67,7 @@ const Projects = ({ theme }) => {
   }, [])
 
   useEffect(() => {
-    console.log('projects2',projects2)
+    console.log('projects2',projects)
     console.log('status', projectsResponse.status)
     console.log('res', projectsResponse.response)
   }, [projectsResponse.response])
@@ -106,7 +86,7 @@ const Projects = ({ theme }) => {
       projectsResponse.status === status.RESOLVE &&
       projectsResponse.response
     ) {
-      setProjects2(projectsResponse.response);
+      setProjects(projectsResponse.response);
     }
 
     return () => {
@@ -118,30 +98,39 @@ const Projects = ({ theme }) => {
   }, [projectsResponse]);
 
   if (projectsResponse.status === status.REJECT) {
-    return <CustomText 
-      text={'Ups coś poszło nie tak'} 
-      gridArea={null}
-    />;
+    return (
+    <RespContainer>
+      <CustomText 
+        text={'Ups coś poszło nie tak'} 
+        gridArea={null}
+      />;
+    </RespContainer>
+    )
   }
 
   if (projectsResponse.status === status.PENDING || !projects) {
     return (
-      <CustomText 
-      text={'Wczytuje'} 
-      gridArea={null}
-    />
+      <RespContainer>
+        <Loader 
+        type="TailSpin"
+        color={theme.color.focused}
+        height={100}
+        width={100}
+        />
+      </RespContainer>
     );
   }
 
   return (
     <GridContainer>
       <CustomTitle text={title} gridArea={null} />
-      {projects2 && projects2.map((data, i) => (
+      {projects && projects.map((data, i) => (
         <Project
           key={i}
+          header={data.header}
           title={data.title}
           link={data.link}
-          linkGitlab={data.linkGitlab}
+          linkGitlab={data.linkGithub}
           imgSrc={data.imgSrc}
         />
       ))}

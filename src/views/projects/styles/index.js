@@ -55,3 +55,11 @@ export const ProjectLinks = styled.div`
   grid-gap: 20px;
   display: ${props => props.display};
 `
+
+export const RespContainer = styled.div`
+  padding-top: ${isMobile ? '50%' : '20%'};
+  z-index: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`
