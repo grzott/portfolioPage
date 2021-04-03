@@ -3,13 +3,13 @@ import styled, { withTheme } from "styled-components"
 import { isMobile } from "react-device-detect"
 import HtmlIcon from "../../../assets/svg/html.svg"
 import CssIcon from "../../../assets/svg/css.svg"
-import SassIcon from "../../../assets/svg/sass.svg"
 import JsIcon from "../../../assets/svg/js.svg"
 import TsIcon from "../../../assets/svg/ts.svg"
 import RIcon from "../../../assets/svg/rIcon.svg"
 import NextIcon from "../../../assets/svg/nextjs.svg"
 import GatsbyIcon from "../../../assets/svg/gatsbyjs.svg"
-import FigmaIcon from "../../../assets/svg/figma.svg"
+import AndroidIcon from "../../../assets/svg/android.svg"
+import KotlinIcon from "../../../assets/svg/kotlin.svg"
 
 const ICONS_SIZE = 150
 
@@ -23,13 +23,13 @@ const GridContainer = styled.div`
 const icons = [
   "html",
   "css",
-  "sass",
   "js",
   "rIcon",
   "gatsbyjs",
   "next",
-  "figma",
   "ts",
+  "kotlin",
+  "android",
 ]
 
 const IconContainer = styled.div`
@@ -56,12 +56,12 @@ const iconSwitcher = icon => {
       return <HtmlIcon />
     case "css":
       return <CssIcon />
-    case "sass":
-      return <SassIcon />
+    case "android":
+      return <AndroidIcon />
     case "next":
       return <NextIcon />
-    case "figma":
-      return <FigmaIcon />
+    case "kotlin":
+      return <KotlinIcon />
     case "rIcon":
       return <RIcon />
     default:
