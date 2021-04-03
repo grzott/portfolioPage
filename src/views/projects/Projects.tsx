@@ -9,13 +9,17 @@ import {
   ProjectLinks,
 } from "./styles"
 import LinkIcon from "../../components/_shared/linkIcon/LinkIcon"
+import  { fetchProjects, status }  from '../../repository/actions'
+import CustomText from "../../components/_shared/customText/CustomText"
+import { IProjects } from "../../.."
+
 
 const projects = [
   {
     title: "Portfolio",
     link: "https://github.com/grzott/portfolioPage",
     linkGitlab: "https://github.com/grzott/portfolioPage",
-    imgSrc: "/p1.png",
+    imgSrc: "https://i.postimg.cc/HWJgRDMj/p1.png",
   },
   {
     title: "Aplikacja Polskie Radio Kierowców",
@@ -64,15 +68,77 @@ const Project = withTheme(({ title, link, linkGitlab, imgSrc }) => {
 
 const Projects = ({ theme }) => {
   const [title, setTitle] = useState("")
-
+  const [projectsResponse, setProjectsResponse] = useState<{
+    status: Number,
+    response: Array<IProjects> | null,
+  }>({status: status.PENDING, response: null}
+    );
+  const [projects2, setProjects2] = useState(null);
+  const {fetchProjectsData, cancelProjectsFetch} = fetchProjects(
+    setProjectsResponse,
+  );
+  
   useEffect(() => {
     setTitle(theme.title.projects)
   }, [theme])
 
+  useEffect(() => {
+    fetchProjectsData();
+    return () => {
+      cancelProjectsFetch();
+    };
+  }, [])
+
+  useEffect(() => {
+    console.log('projects2',projects2)
+    console.log('status', projectsResponse.status)
+    console.log('res', projectsResponse.response)
+  }, [projects2])
+
+  //set projects
+  useEffect(() => {
+    let checkAgain: number = 0;
+    if (projectsResponse.status === status.REJECT) {
+      checkAgain = setTimeout(() => {
+        fetchProjectsData();
+      }, 15000);
+    }
+
+    if (
+      projectsResponse.status === status.RESOLVE &&
+      projectsResponse.response
+    ) {
+      setProjects2(projectsResponse.response);
+    }
+
+    return () => {
+      if (checkAgain) {
+        clearTimeout(checkAgain);
+        cancelProjectsFetch();
+      }
+    };
+  }, [projectsResponse]);
+
+  if (projectsResponse.status === status.REJECT) {
+    return <CustomText 
+      text={'Ups coś poszło nie tak'} 
+      gridArea={null}
+    />;
+  }
+
+  if (projectsResponse.status === status.PENDING || !projects) {
+    return (
+      <CustomText 
+      text={'Wczytuje'} 
+      gridArea={null}
+    />
+    );
+  }
+
   return (
     <GridContainer>
-      <CustomTitle text={title} />
-      {projects.map((data, i) => (
+      <CustomTitle text={title} gridArea={null} />
+      {projects2 && projects2.map((data, i) => (
         <Project
           key={i}
           title={data.title}
