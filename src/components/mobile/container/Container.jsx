@@ -1,14 +1,14 @@
 import React from "react"
 import styled, { withTheme } from "styled-components"
 
-const Container = styled.div`
+const MContainer = styled.div`
   max-width: 92%;
-  margin: 0 auto;
-  padding: 80px 0;
+  margin: 0 20px;
+  padding: 60px 0 40px 0;
 `
 
 const MobileContainer = ({ children, theme }) => {
-  return <Container>{children}</Container>
+  return <MContainer>{children}</MContainer>
 }
 
 export default withTheme(MobileContainer)
