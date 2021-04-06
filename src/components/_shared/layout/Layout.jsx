@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { isMobile } from "react-device-detect";
+// import { isMobile } from "react-device-detect";
 import { GlobalStyle } from "../../../theme/global-styles";
 import { withTheme } from "styled-components";
 import DesktopContainer from "../../desktop/container/Container";
@@ -10,6 +10,9 @@ import Footer from "../../_shared/footer/Footer";
 import { ThemeProvider } from 'styled-components';
 import * as _theme from '../../../theme/Themes';
 import { useSelector } from 'react-redux'
+import Loader from "react-loader-spinner";
+
+const { isMobile } = require("react-device-detect")
 
 const Layout = withTheme(({ children }) => {
   const toggleTheme = useSelector(state => state.toggleTheme)
@@ -44,17 +47,27 @@ const Layout = withTheme(({ children }) => {
           <Footer />
         </MobileContainer>     
       </ThemeProvider>
-    )
+    ) 
+    else if (!isMobile) {
+      return (
+        <ThemeProvider theme={{...theme, ...lang}}>
+          <GlobalStyle />
+          <DesktopContainer>
+            {children}
+            <DesktopHeader />
+            <Footer />
+          </DesktopContainer>   
+        </ThemeProvider>
+      )
+    }
 
-  return (
-    <ThemeProvider theme={{...theme, ...lang}}>
-      <GlobalStyle />
-      <DesktopContainer>
-        {children}
-        <DesktopHeader />
-        <Footer />
-      </DesktopContainer>   
-    </ThemeProvider>
+    return (
+    <Loader 
+    type="TailSpin"
+    color={theme.color.focused}
+    height={100}
+    width={100}
+    />
   )
 })
 
